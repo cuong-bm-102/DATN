@@ -1,0 +1,1677 @@
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[14pt, oneside,A4paper]{book}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{theorem,amsmath,amssymb,latexsym,amscd,amsxtra}
+\usepackage{theorem,amsmath,amssymb,latexsym,amscd,amsxtra,graphicx,graphpap}
+\usepackage{pb-diagram}
+\usepackage{indentfirst}
+\usepackage{caption}
+%\usepackage{graphicx}
+\usepackage{picinpar,floatflt}
+\usepackage{ makecell}
+\usepackage{longtable}
+\usepackage{fancybox}
+\usepackage[utf8]{vietnam}
+\usepackage[tight,vietnam]{minitoc}
+\usepackage{anyfontsize}
+\usepackage[left=3.5cm,right=2.5cm,top=2.0cm,bottom=2cm]{geometry}
+%==================================
+\usepackage{titletoc}
+%==================================
+
+%==================================
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\theoremstyle{plain}
+\newcommand{\eproof}{\hfill $\square$}
+%\newcommand{\eproof}{\hfill}
+\newcommand{\chm}{{\bf  Chứng minh.}}
+%===============================
+\newtheorem{theorem}{Định lý}[section]
+\newtheorem{corollary}[theorem]{Hệ quả}
+\newtheorem{cy}[theorem]{Chú ý} 
+\newtheorem{definition}[theorem]{Định nghĩa}%[section]
+\newtheorem{bd}[theorem]{Bổ đề} 
+\newtheorem{bt}[theorem]{Bài toán}
+\newtheorem{md}[theorem]{Mệnh đề} 
+\newtheorem{remark}[theorem]{Nhận xét} 
+\newtheorem{Bt}[theorem]{Bài toán} 
+\newtheorem{example}[theorem]{Ví dụ} 
+\newtheorem{hq}[theorem]{Hệ quả}
+\newtheorem{kh}[theorem]{Kí hiệu}
+\newtheorem{cor}[theorem]{Hệ quả}
+\newtheorem{dfn}[theorem]{Định nghĩa}%[section]
+\newtheorem{lem}[theorem]{Bổ đề} 
+\newtheorem{prop}[theorem]{Mệnh đề} 
+\newtheorem{dl}[theorem]{Định lý}
+\newtheorem{vd}[theorem]{\bf Ví dụ} 
+\newtheorem{nx}[theorem]{\bf Nhận xét} 
+\newtheorem{dn}[theorem]{\bf Định nghĩa} 
+\newtheorem{tc}[theorem]{\bf Tính chất} 
+\newtheorem{ch}[theorem]{\bf Câu hỏi} 
+\newtheorem{ttt}[theorem]{\bf Thuật toán} 
+\newtheorem{gt}[theorem]{\bf Giả thiết} 
+%\newtheorem{kh}[theorem]{\bf Kí hiệu} 
+\newcommand{\gc}{\frak{g}}
+\newcommand{\uc}{\frak{u}}
+\newcommand{\scg}{\frak{s}}
+\newcommand{\lc}{\frak{l}}
+\newcommand{\oc}{\frak{o}}
+%\newcommand{\tc}{\frak{t}}
+\newcommand{\nc}{\frak{n}}
+\newcommand{\ac}{\frak{a}}
+\newcommand{\hc}{\frak{h}}
+\newcommand{\ma}{\mathbb}
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\oddsidemargin}{1.2cm}     %Lề trái tính từ điểm cách mép giấy 2.54cm
+\setlength{\topmargin}{-1cm}          %Lề trên tính từ điểm cách mép giấy 2.54cm
+\setlength{\headsep}{0.5cm}                %Khoang cach tu  Headerline tới Khối chữ
+\textwidth=15.5cm
+\textheight=24.0cm
+\renewcommand{\bibname}{Tài liệu tham khảo}
+\renewcommand{\large}{\fontsize{14pt}{14pt}\selectfont}
+\renewcommand{\Large}{\fontsize{16pt}{16pt}\selectfont}
+\renewcommand{\LARGE}{\fontsize{15pt}{15pt}\selectfont}
+\renewcommand{\th}{\fontsize{18pt}{18pt}\selectfont}
+\makeatletter
+\def\ps@myheadings{
+\def\@evenhead{\hfil\thepage\hfil}
+\def\@oddhead{
+\hfil\thepage\hfil}}
+\makeatother
+\pagestyle{myheadings}
+
+\usepackage{fancyhdr}
+
+\fancyhf{}
+
+\fancyhead[C]{\thepage}
+
+\pagestyle{fancy}
+
+\fancypagestyle{plain}
+
+\fancyhf{} % clear all header and footer fields
+
+\fancyhead[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\thispagestyle{empty}
+%\thispagestyle{headings}
+\setcounter{page}{1}%
+\pagenumbering{roman}
+%\addcontentsline{toc}{chapter}{{Trang bìa phụ}}
+%\newgeometry{top=2.0cm,bottom=3.0cm,left=3.5cm,right=2.8cm}
+%\begin{titlepage}
+
+\setlength{\fboxrule}{1pt}
+
+\begin{center}
+\Large
+\textbf{TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI}
+
+\end{center}
+\vspace{1cm}
+\begin{center}
+\fontsize{17pt}{15pt}\selectfont
+
+\vspace{1cm}
+\textbf{ĐỒ ÁN TỐT NGHIỆP}\\
+\end{center}
+
+
+\vspace{2cm}
+\begin{center}
+\fontsize{17pt}{16pt}\selectfont
+
+\bf  PHƯƠNG PHÁP LẶP GIẢI BẤT ĐẲNG THỨC BIẾN PHÂN TRÊN TẬP KHÔNG ĐIỂM CỦA TOÁN TỬ ĐƠN ĐIỆU CỰC ĐẠI
+
+\end{center}
+
+\vspace{1cm}
+\begin{center}
+	\fontsize{14pt}{16pt}\selectfont 	
+	{\bf NGUYỄN MẠNH CƯỜNG}\\	
+	\fontsize{13pt}{16pt}\selectfont
+	cuong.nm140596@sis.hust.edu.vn\\
+	\fontsize{14pt}{16pt}\selectfont
+	{\bf Ngành Toán Tin }\\
+	%{\bf Chuyên sâu: Các phương pháp tối ưu}\\
+\end{center}
+
+
+\vspace{2cm}
+\begin{center}
+\begin{tabular}{l l}
+Giảng viên hướng dẫn:&{\bf  PGS.TS. NGUYỄN THỊ THU THỦY} \quad $_{\overline{\text{Chữ kí của GVHD}}}$\\
+\\
+Bộ môn:&{\bf Toán ứng dụng}\\[0.5cm]
+Viện:&{\bf Toán ứng dụng và Tin học}
+\end{tabular}
+
+\end{center}
+\vspace{1.7cm}
+\begin{center}
+\LARGE HÀ NỘI--01/2021
+\end{center}
+
+\newpage
+\begin{center}
+\fontsize{17pt}{16pt}\selectfont
+\textbf{ĐỒ ÁN TỐT NGHIỆP}\\
+\end{center}
+\begin{center}
+\vspace{1cm}
+\large \bf  Chuyên ngành:     Toán Tin\\
+\vspace{0.5cm}
+\large	Chuyên sâu: Các phương pháp tối ưu\\
+\end{center}
+
+\vspace{3cm}
+\begin{center}
+\fontsize{17pt}{16pt}\selectfont
+
+\bf  PHƯƠNG PHÁP LẶP GIẢI BẤT ĐẲNG THỨC BIẾN PHÂN TRÊN TẬP KHÔNG ĐIỂM CỦA TOÁN TỬ ĐƠN ĐIỆU CỰC ĐẠI
+
+\end{center}
+
+\vspace{1.5cm}
+
+\vspace{1.0 cm}
+\begin{tabular}
+	{@{\hspace{1cm}} l @{\hspace{1.2cm}}p{11.5cm}l}
+	
+	\large Sinh viên thực hiện: &  	\large {\bf Nguyễn Mạnh Cường}\\
+	\large Lớp: & 	\large Toán Tin K59\\
+	\large Giảng viên hướng dẫn: & 	\large 	{\bf PGS.TS. Nguyễn Thị Thu Thủy}
+\end{tabular}
+\vspace{6.5cm}
+\begin{center}
+	\LARGE HÀ NỘI--01/2021
+\end{center}
+
+\newpage
+
+\chapter*{Nhận xét của giảng viên hướng dẫn}
+
+\fontsize{12pt}{14pt}\selectfont
+\begin{enumerate}
+	\item [{\bf 1.}]{\bf Mục tiêu và nội dung của đồ án}
+%	\begin{enumerate}
+		\item[(a)] Mục tiêu: Đề tài đồ án nghiên cứu phương pháp giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực, nghiên cứu sự hội tụ mạnh của phương pháp cùng ví dụ số minh họa.
+		\item[(b)] Nội dung: Trình bày khái niệm và ví dụ về bài toán không điểm của toán tử đơn điệu cực đại, bài toán bất đẳng thức biến phân hai cấp trong không gian Hilbert thực; trình bày một phương pháp lặp hiện giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực vô hạn chiều; trình bày chứng minh sự hội tụ mạnh của phương pháp; đề xuất ví dụ số minh họa cho sự hội tụ mạnh của phương pháp trong không gian Hilbert thực hữu hạn chiều.
+%	\end{enumerate}
+	\item [{\bf 2.}] {\bf Kết quả đạt được} 
+%	\begin{enumerate}
+		\item[(a)] Dịch, tổng hợp và trình bày lại kết quả trong  \cite{BHN} và một số tài liệu liên quan về bài toán bất đẳng thức biến phân hai cấp trong đó bài toán cấp trên là bài toán bất đẳng thức biến phân đơn điệu, bài toán cấp dưới là bài toán không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực và  phương pháp lặp hiện giải lớp bài toán này.
+		\item[(b)] Trình bày một áp dụng giải bài toán cực trị trong không gian Hilbert thực.
+		\item[(c)] Đề xuất và tính toán ví dụ minh họa cho sự hội tụ mạnh của phương pháp lặp trong không gian Hilbert thực hữu hạn chiều. 
+%	\end{enumerate}
+	\item [{\bf 3.}]{\bf Ý thức làm việc của sinh viên}
+%	\begin{enumerate}
+		\item[(a)] Có ý thức, trách nhiệm trong quá trình học tập và làm đồ án.
+		\item[(b)] Ham học hỏi và tìm hiểu những kiến thức chuyên sâu liên quan đến đề tài đồ án.
+		\item[(c)] Hoàn thành tốt đồ án theo đúng yêu cầu của giáo viên hướng dẫn.
+%	\end{enumerate}
+\end{enumerate}
+
+\bigbreak
+
+\hspace{6.5cm}
+\textit{ Hà Nội, ngày 05 tháng 01 năm 2021}
+
+\bigbreak
+\hspace{7.6cm} {\bf Giảng viên hướng dẫn}
+
+\vspace{3 cm}
+\hspace{6.5cm} {\bf PGS.TS. Nguyễn Thị Thu Thủy}
+\large
+
+\newpage
+\chapter*{Lời cảm ơn}
+
+\fontsize{22pt}{16pt}\selectfont
+%\noindent {\bf Lời cảm ơn}
+%\thispagestyle{empty}
+\fontsize{13pt}{16pt}\selectfont
+\bigskip
+
+Đồ án này được hoàn thành tại trường Đại học Bách khoa Hà Nội dưới sự hướng dẫn của PGS.TS. Nguyễn Thị Thu Thủy. Tác giả xin được bày tỏ lòng biết ơn sự hướng dẫn tận tình, giải đáp các thắc mắc của PGS.TS. Nguyễn Thị Thu Thủy trong suốt quá trình tìm hiểu, thực hiện và hoàn thành đồ án.
+
+Tác giả trân trọng gửi lời cảm ơn đến Ban Lãnh đạo Trường Đại học Bách Khoa Hà Nội, các thầy cô trong bộ môn Toán ứng dụng nói riêng và các thầy cô Viện Toán ứng dụng và Tin học nói chung đã luôn động viên giúp đỡ tác giả trong suốt thời gian học tập tại Viện và Trường.
+
+Cuối cùng, tác giả xin chân thành cảm ơn gia đình và bạn bè đã luôn tạo điều kiện, quan tâm, giúp đỡ, động viên trong suốt quá trình học tập và nghiên cứu.\\
+\bigskip
+
+\fontsize{22pt}{16pt}\selectfont
+\noindent {\bf Tóm tắt nội dung đồ án}
+\fontsize{13pt}{16pt}\selectfont
+\bigskip
+
+\begin{enumerate}
+	\item Trình bày các cơ sở toán học về không gian Hilbert và giới thiệu bài toán bất đẳng thức biến phân cùng một số bài toán liên quan. Cụ thể, trình bày một số tính chất của không gian Hilbert; khái niệm và ví dụ về toán tử đơn điệu cực đại, tập không điểm của toán tử đơn điệu cực đại và toán tử chiếu trong không gian Hilbert; bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại.
+	\item Mô tả  phương pháp giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại; chứng minh sự hội tụ của phương pháp trong không gian Hilbert thực.% \eqref{2.1.8}.
+	\item Đưa ra một áp dụng giải bài toán cực trị và tính toán ví dụ số minh họa cho sự hội tụ của phương pháp trong không gian Hilbert thực hữu hạn chiều.%  \eqref{2.1.8}.
+\end{enumerate}
+
+\hspace*{7.5cm} \textit{Hà Nội, ngày 05 tháng 01 năm 2021} \\
+\hspace*{10.5cm} Tác giả đồ án\\ [2cm]
+\hspace*{9.5cm} \textbf{Nguyễn Mạnh Cường}
+\tableofcontents % Là xuất hiện mục lục.
+\pagestyle{myheadings}
+
+
+\newpage
+
+\thispagestyle{empty}
+
+\pagenumbering{arabic}
+
+\chapter*{Bảng ký hiệu}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}%
+%\pagenumbering{arabic}
+\addcontentsline{toc}{chapter}{Bảng ký hiệu}
+
+\begin{tabular}
+	{@{\hspace{-0.1cm}} l @{\hspace{1.2cm}}p{11.5cm}l}
+	$\mathbb R$ & tập các số thực\\	
+	$\mathbb R^N$ & không gian Euclid $N$ chiều\\
+	$\mathcal H$ & không gian Hilbert thực\\
+	$x \in C$ & $x$ thuộc tập $C$\\
+	$\bigtriangledown  f(x)$ &  gradient của hàm $f$ tại điểm $x$\\
+	$\forall x$  & với mọi $x$\\
+	$\langle x,y \rangle$ & tích vô hướng của $x$ và $y$\\
+	$\Vert x \Vert$ & chuẩn của $x$\\
+	%$d(x,C)$ & khoảng cách từ phần tử $x$ đến tập hợp $C$ \\
+	$N_{C}z$ & nón chuẩn tắc của $C$ tại điểm $z$\\
+	$P_{C}$ & phép chiếu mêtric lên tập $C$\\
+	$x_{n} \rightarrow x$ & dãy $\{x_{n}\}$ hội tụ mạnh tới $x$\\
+	$x_{n} \rightharpoonup x$ & dãy $\{x_{n}\}$ hội tụ yếu tới $x$\\
+	Fix($S$) & tập điểm bất động của ánh xạ $S$\\
+	VIP($C,F$) & bài toán bất đẳng thức biến phân với ánh xạ $F$ và tập ràng buộc $C$
+\end{tabular}
+
+%\newpage
+
+\listoftables
+\addcontentsline{toc}{chapter}{Danh sách bảng}
+
+\chapter*{Mở đầu}
+
+
+\addcontentsline{toc}{chapter}{Mở đầu}
+\fontsize{14pt}{16pt}\selectfont
+
+Bài toán bất đẳng thức biến phân được G. Stampacchia và đồng nghiệp \cite{Stam} đề xuất và nghiên cứu đầu tiên  từ đầu những năm 60 của thế kỉ trước. Những nghiên cứu đầu tiên của G. Stampacchia về bất đẳng thức biến phân liên quan đến việc giải bài toán biên của phương trình đạo hàm riêng. Bất đẳng thức biến phân vô hạn chiều và các ứng dụng của nó được D. Kinderlehrer và G. Stampacchia giới thiệu trong \cite{Kin} năm 1980, C. Baiocchi và A. Capelo nghiên cứu trong \cite{Bai} năm 1984. Năm 1979, M.J. Smith \cite{Smith} đưa ra bài toán cân bằng mạng giao thông và năm 1980 S. Dafermos \cite{Daf} chỉ ra rằng điểm cân bằng của bài toán này là nghiệm của một bất đẳng thức biến phân. Cho tới nay, đã có nhiều bài toán quan trọng trong thực tế được thiết lập và nghiên cứu dưới dạng bất đẳng thức biến phân. Chẳng hạn, bài toán cân bằng mạng giao thông, bài toán cân bằng thị trường độc quyền, bài toán cân bằng tài chính và bài toán cân bằng di cư (xem \cite{Nag}). 
+  
+Ngoài ra, bất đẳng thức biến phân còn là một công cụ hữu hiệu để nghiên cứu và xây dựng các phương pháp giải số cho nhiều lớp bài toán cân bằng trong kinh tế tài chính, kỹ thuật, vận tải, lý thuyết trò chơi v.v$\dots$ Do vậy việc nghiên cứu sự tồn tại và duy nhất nghiệm, cũng như xây dựng các phương pháp giải bài toán bất đẳng thức biến phân đã và đang là một đề tài thời sự thu hút được sự quan tâm nghiên cứu của nhiều nhà toán học trong và ngoài nước.
+
+Đồ án này nhằm mục tiêu trình bày phương pháp lặp giải một lớp bài toán bất đẳng thức biến phân hai cấp trong không gian Hilbert thực, trong đó bài toán cấp trên là bài toán bất đẳng thức biến phân đơn điệu, bài toán cấp dưới là bài toán không điểm của toán tử đơn điệu cực đại.
+
+Nội dung của đồ án được trình bày trong ba chương. Chương 1 "Bài toán không điểm và bài toán bất đẳng thức biến phân". Chương này trình bày một số tính chất của không gian Hilbert thực; khái niệm và ví dụ về toán tử đơn điệu cực đại, toán tử chiếu, toán tử đơn điệu mạnh trong không gian Hilbert thực; giới thiệu bài toán không điểm của toán tử đơn điệu cực đại cùng một số bài toán liên quan. Chương 2 "Phương pháp lặp giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại". Chương này trình bày phương pháp giải một lớp bài toán bất đẳng thức biến phân hai cấp, đó là bài toán bất đẳng thức biến phân đơn điệu trên tập không điểm của toán tử đơn điệu cực đại trong bài báo \cite{BHN} của Nguyễn Bường và các đồng tác giả công bố năm 2017; trình bày chứng minh sự hội tụ mạnh của dãy lặp và đưa ra một áp dụng giải bài toán cực trị cùng ví dụ số minh họa cho sự hội tụ mạnh của phương pháp trong không gian hữu hạn chiều. Chương trình thực nghiệm được viết bằng ngôn ngữ MATLAB. Chương 3 "Kết luận" trình bày các kết quả đạt được của đồ án cùng một số hướng phát triển của đồ án trong tương lai.
+%\end{itemize}
+
+\chapter{Bài toán không điểm và bài toán bất đẳng thức biến phân trong không gian Hilbert}
+
+Chương này giới thiệu bài toán không điểm của toán tử đơn điệu cực đại và bài toán bất đẳng thức biến phân trong không gian Hilbert thực $\mathcal H$ cùng một số bài toán liên quan. Kiến thức của chương được tổng hợp từ các tài liệu \cite{TT,Tuy,AS,BHN,Kon}.
+
+\section{Bài toán không điểm của toán tử đơn điệu cực đại}
+
+\subsection{Một số tính chất của không gian Hilbert thực}
+
+Cho $\mathcal H$ là một không gian Hilbert thực với tích vô hướng và chuẩn được ký hiệu tương ứng là $\langle ., . \rangle$ và $\Vert . \Vert$. Ký hiệu sự hội tụ mạnh (tương ứng hội tụ yếu) của dãy $\{x_n\}\subset \mathcal H$ đến $x\in \mathcal H$ là $x_n\to x$ (tương ứng, $x_n\rightharpoonup x$).
+
+\begin{dl}[xem \cite{Tuy}]  Không gian Hilbert thực $\mathcal H$ có một số tính chất sau:
+	\begin{itemize}
+		\item[$(i)$] $\vert \langle x,y\rangle \vert \leq \Vert x\Vert\cdot\Vert y \Vert $ với mọi $x,y\in \mathcal H$ (bất đẳng thức Cauchy--Schwartz);
+		\item[$(ii)$] $\Vert x+y \Vert^{2}+\Vert x-y \Vert^{2} = 2(\Vert x \Vert^{2} + \Vert y \Vert^{2})$ với mọi $x,y\in \mathcal H$ (đẳng thức hình bình hành).
+		\item[$(iii)$] Nếu $\lim_{n\to \infty} {x_{n}}=a$, $\lim_{n\to \infty} {y_{n}}=b$ thì $\lim_{n\to \infty} \langle x_{n},y_{n} \rangle = \langle a,b\rangle $.
+	\end{itemize}
+\end{dl}
+
+\begin{bd}[xem \cite{Tuy}]\label{bd2.2.1}
+	Cho $\mathcal H$ là một không gian Hilbert thực. Khi đó, bất đẳng thức sau đây là đúng:
+	\begin{align*}
+	\Vert x+y \Vert^{2}\leq \Vert x \Vert^{2}+2\langle y,x+y \rangle, \quad \text{với mọi $x,y\in \mathcal H$}.
+	\end{align*}
+\end{bd}
+
+\begin{dl}[xem \cite{Tuy}] Trong không gian Hilbert thực $\mathcal H$:
+	\begin{itemize}
+		\item[$(i)$] $\Vert x+y\Vert^2 = \Vert x\Vert^2 +\Vert y\Vert^2 + 2 \langle x,y\rangle$ với mọi $x,y\in \mathcal H$;
+		\item[$(ii)$] $\Vert x-y\Vert^2 = \Vert x\Vert^2 +\Vert y\Vert^2 - 2 \langle x,y\rangle$ với mọi $x,y\in \mathcal H$;
+		\item[$(iii)$] $\Vert  t x+(1-t) y\Vert^2 =t \Vert x\Vert^2 + (1-t) \Vert y\Vert^2 -t(1-t)  \Vert x -y\Vert^2$ với mọi $t \in [0,1]$ và với mọi $x,y\in \mathcal H$.
+	\end{itemize}
+\end{dl}
+
+Dưới đây là một đặc trưng hình học quan trọng của không gian Hilbert thực $\mathcal H$.
+
+\begin{md}[xem \cite{AS}] \label{mdPC}
+Cho $C$ là một tập con lồi và đóng của không gian Hilbert thực $\mathcal H$. Với mỗi $x\in \mathcal H$, tồn tại duy nhất phần tử $P_C(x)\in C$ sao cho
+$$\|x-P_C(x)\|\leq\|x-y\|\ \text{với mọi }y\in C.$$
+\end{md} 
+
+\noindent \chm \rm  \ Đặt $d= \inf\limits_{u\in C} \|x-u\|$. Khi đó, tồn tại $\{u_n\} \subset C$ sao cho $\|x-u_n\|\longrightarrow d,\text{ } n\longrightarrow\infty$. Từ đó ta có
+	\begin{align*}
+	{\|u_n-u_m}\|^2 &= {\|(x-u_n)-(x-u_m)\|}^2\\
+	&= 2{\|x-u_n\|}^2 + 2{\|x-u_m\|}^2 - 4{\Big \|x-\frac{u_n+u_m}{2}\Big \|}^2\\
+	&\leq 2({\|x-u_n\|}^2 + {\|x-u_m\|}^2) - 4d^2 \longrightarrow 0, 
+	\end{align*}
+	khi $n,m\longrightarrow \infty.$ Do đó $\{u_n\}$ là dãy Cauchy trong $\mathcal H$. Suy ra tồn tại $u= \lim\limits_{n\rightarrow \infty} u_n \in C$.
+	Do chuẩn là hàm số liên tục nên $\|x-u\| = d$.
+	Giả sử tồn tại $v\in C$ sao cho $\|x-v\|=d$. Ta có
+	\begin{align*}
+	{\|u-v\|}^2 &={\|(x-u)-(x-v)\|}^2\\
+	&= 2({\|x-u\|}^2+{\|x-v\|}^2)-4{\Big \|x- \frac{u+v}{2} \Big \|}^2\\
+	&\leq 0.
+	\end{align*} 
+	Suy ra $u=v$. Vậy tồn tại duy nhất một phần tử $P_Cx\in C$ sao cho $\|x-P_Cx\|=\inf_{u\in C}\|x-u\|.$
+\eproof
+
+\begin{dn}[xem \cite{AS}]\rm  Phép cho tương ứng mỗi phần tử $x\in \mathcal H$ một phần tử $P_C(x)\in C$ xác định như trong Mệnh đề \ref{mdPC} được gọi là phép chiếu mêtric từ $\mathcal H$ lên $C$.
+\end{dn}
+
+Dưới đây là hai ví dụ về toán tử chiếu trong không gian Hilbert thực $\mathcal H $.
+
+\begin{vd}\rm 
+	\begin{enumerate}
+		\item[(a)] Cho $C=\{x\in \mathcal H:\langle x,u\rangle = y\}$, với $u\neq 0$. Khi đó $$P_C(x)=x+\dfrac{y-\langle x,u\rangle}{{\|u\|}^2} u, \quad x\notin C.$$
+		\item[(b)] Cho $C=\{x\in \mathcal H: \|x-a\|\leq r\}$, trong đó $a\in \mathcal H$ là một phần tử cho trước và $r$ là một số dương. Khi đó, 
+		$$P_C(x)=
+		\begin{cases}
+		x,& \text{ nếu }\|x-a\|\leq r,\\
+		a+\dfrac{r}{\|x-a\|}(x-a) , &\text{ nếu }\|x-a\|> r.
+		\end{cases}
+		$$
+	\end{enumerate}
+\end{vd}
+
+Mệnh đề dưới đây cho ta một điều kiện cần và đủ để ánh xạ $P_C: \mathcal H\to C$ là một phép chiếu mêtric.
+\begin{md}[xem \cite{AS}]\label{md12}
+Cho $C$ là một tập con lồi đóng của không gian Hilbert thực $\mathcal H$. Điều kiện cần và đủ để ánh xạ $P_C:\ \mathcal H\longrightarrow C$ là phép chiếu mêtric từ $\mathcal H$ lên $C$ là
+\begin{equation}\label{80}
+\langle x-P_C(x),P_C(x)-y\rangle \geq 0\ \text{với mọi } x\in \mathcal H \text{ và }y\in C.
+\end{equation}
+\end{md} 
+\noindent \chm \rm  \ Giả sử $P_C$ là phép chiếu mêtric chiếu $\mathcal H$ lên $C$. Khi đó với mọi $x\in \mathcal H$, $y\in C$ và mọi $t\in (0,1)$, ta có $t y +(1-t)P_C(x)\in C$. Do đó, từ định nghĩa của phép chiếu mêtric, suy ra
+	$$\|x-P_C(x)\|^2\leq \|x-t y -(1-t)P_C(x)\|^2,$$
+	với mọi $t\in (0,1)$. Bất đẳng thức trên tương đương với
+	$$\|x-P_C(x)\|^2\leq\|x-P_C(x)\|^2 -2t\langle x-P_C(x), y-P_C(x)\rangle + t^2\|y-P_C(x)\|^2,$$
+	với mọi $t\in (0,1)$. Từ đó,
+	$$\langle x-P_C(x),P_C(x)-y\rangle\geq -\dfrac{t}{2}\Big \|y-P_C(x) \Big \|^2,$$
+	với mọi $t\in (0,1)$. Cho $t\to 0^+$, ta nhận được
+	$$\langle x-P_C(x),P_C(x)-y\rangle \geq 0.$$
+	Ngược lại, giả sử 
+	$$\langle x-P_C(x),P_C(x)-y\rangle \geq 0\ \text{với mọi } x\in \mathcal H \text{ và }y\in C.$$
+	Khi đó, với mỗi $x\in \mathcal H$ và $y\in C$, ta có
+	\begin{align*}
+	\|x-P_C(x)\|^2&=\langle x-P_C(x), x-y+y-P_C(x)\rangle\\
+	&=\langle x-P_C(x), y-P_C(x)\rangle +\langle x-P_C(x), x-y\rangle\\
+	&\leq \|x-y\|^2 +\langle y-P_C(x), x-P_C(x)+P_C(x)-y\rangle\\
+	&=\|x-y\|^2 +\langle y-P_C(x), x-P_C(x)\rangle -\|y-P_C(x)\|^2\\
+	&\leq \|x-y\|^2.
+	\end{align*}
+	Suy ra $P_C$ là phép chiếu mêtric từ $\mathcal H$ lên $C$.
+
+\eproof
+
+Từ mệnh đề trên, ta có hệ quả dưới đây.
+\begin{hq}[xem \cite{AS}] 
+Cho $C$ là một tập con lồi đóng của không gian Hilbert thực $\mathcal H$ và $P_C$ là phép chiếu mêtric từ $\mathcal H$ lên $C$. Khi đó, với mọi $x,y\in \mathcal H$, ta có
+$$\|P_C(x)-P_C(y)\|^2\leq \langle x-y,P_C(x)-P_C(y)\rangle.$$
+\end{hq} 
+\noindent \chm \rm  \ 
+	Với mọi $x,y\in \mathcal H$, từ Mệnh đề \ref{md12} ta có
+	\begin{align*}
+	&\langle x-P_C(x), P_C(y)-P_C(x)\rangle \leq 0,\\
+	&\langle y-P_C(y), P_C(x)-P_C(y)\rangle \leq 0.
+	\end{align*}
+	Cộng hai bất đẳng thức trên ta nhận được điều phải chứng minh.
+\eproof
+
+\subsection{Toán tử đơn điệu cực đại trong không gian Hilbert}
+
+\begin{dn}[xem \cite{AS}]\label{dnKG} \rm Cho $C$ là một tập con khác rỗng của không gian Hilbert thực $\mathcal H$.
+	\begin{itemize}
+		\item[$(i)$] Ánh xạ $T: C \rightarrow \mathcal H$ được gọi là ánh xạ $L$-liên tục Lipschitz trên $C$ nếu tồn tại hằng số $L \ge 0$ sao cho
+		\begin{equation}\label{eq.lipschitz}
+		\Vert T(x) -T(y) \Vert \leq L \Vert x - y\Vert, \quad \forall x,y \in C.
+		\end{equation}
+		\item[$(ii)$] Trong \eqref{eq.lipschitz}, nếu $L \in [0,1)$ thì $T$ được gọi là ánh xạ co; nếu $L=1$ thì $T$ được gọi là ánh xạ không giãn.
+	\end{itemize}
+\end{dn}
+
+
+
+\begin{dn}[xem \cite{AS}] \label{dn1.13} \rm Cho $C$ là một tập con lồi đóng khác rỗng trong không gian Hilbert thực $\mathcal H$. Toán tử $A: C \rightarrow \mathcal H$ được gọi là
+	\begin{itemize}
+		\item[$(i)$] đơn điệu trên $C$ nếu 
+		$$ \langle A(x) - A(y), x - y \rangle \geq 0\quad\forall x, y \in C;$$
+		đơn điệu chặt trên $C$ nếu dấu "=" của bất đẳng thức trên chỉ xảy ra khi $x = y$;
+		\item[$(ii)$] giả đơn điệu trên $C$ nếu
+		$$ \langle A(x), y - x \rangle \geq 0\Rightarrow\langle A(y), y - x \rangle \geq 0\quad\forall x, y \in C;$$
+		
+		
+		\item[$(iii)$] đơn điệu đều trên $C$ nếu tồn tại một hàm không âm $\delta (t)$, không giảm với $t \geq 0$, $\delta (0) = 0$ và thỏa mãn tính chất 
+		$$
+		\langle A(x) - A(y), x - y \rangle \geq \delta \big (\| x- y\| \big ) \quad \forall x, y \in C;
+		$$
+		nếu $\delta (t) = \beta t^2$, $\beta$ là hằng số dương, thì $A$ được gọi là toán tử đơn điệu mạnh trên $C$ (hay $\beta$-đơn điệu ~mạnh trên $C$);
+		\item[$(iv)$] đơn điệu mạnh ngược trên $C$ với hệ số $\eta >0$ (hay $\eta$-đơn điệu mạnh ngược trên $C)$ nếu 
+		$$
+		\langle A(x) - A(y), x - y \rangle \geq \eta \| A(x)-A(y) \| ^2 \quad \forall x, y \in C.
+		$$
+	\end{itemize} 
+\end{dn}
+
+\begin{vd}\rm 
+	\begin{enumerate}
+		\item[(a)] Toán tử đơn vị $I$ trong không gian Hilbert thực $\mathcal H$ là toán tử $1$-đơn điệu mạnh, 1-liên tục Lipschitz, 1-đơn điệu mạnh ngược trên $\mathcal H$.
+		
+		\item[(b)] Mọi ánh xạ $\eta$-đơn điệu mạnh ngược $A$ đều là ánh xạ đơn điệu, $L$-liên tục Lipschitz với hằng số Lipschitz $L=\dfrac{1}{\eta}$. 
+	\end{enumerate}
+\end{vd}
+
+\nx[xem \cite{AS}]\rm Nếu $T: C\longrightarrow \mathcal H$ là một ánh xạ không giãn thì $A=I-T$ là $\dfrac{1}{2}$-ngược đơn điệu mạnh trên $C$.
+
+Thật vậy, với mọi $x,y\in C$, ta có
+\begin{align*}
+\|A(x)-A(y)\|^2&=\|(x-y)-(Tx-Ty)\|^2\\
+&=\langle (x-y)-(Tx-Ty), (x-y)-(Tx-Ty)\rangle\\
+&=\langle A(x)-A(y), x-y\rangle -\|A(x)-A(y)\|^2\\
+&\quad -\langle (x-y)-(Tx-Ty), x-y\rangle.
+\end{align*}
+Vì $I-T$ là toán tử đơn điệu, nên
+$$\langle (x-y)-(Tx-Ty), x-y\rangle\geq 0.$$
+Do đó
+$$\|A(x)-A(y)\|^2\leq \langle A(x)-A(y), x-y\rangle -\|A(x)-A(y)\|^2.$$
+Suy ra
+$$\langle A(x)-A(y), x-y\rangle\geq \dfrac{1}{2}\|A(x)-A(y)\|^2,$$
+hay $A=I-T$ là $\dfrac{1}{2}$-ngược đơn điệu mạnh trên $C$.
+\eproof
+\dn[xem \cite{AS}]\rm Cho $C$ là một tập con lồi đóng của không gian Hilbert thực $\mathcal H$. Một ánh xạ $T: C\longrightarrow \mathcal H$ được gọi là giả co chặt nếu tồn tại $k\in [0,1)$ sao cho
+\begin{equation}
+\|T(x)-T(y)\|^2\leq \|x-y\|^2+k\|(I-T)x-(I-T)y\|^2\quad  \forall x,y\in C.
+\end{equation}
+Dễ thấy mọi ánh xạ không giãn đều là ánh xạ giả co chặt với hệ số $k=0$. Để thấy rõ hơn rằng lớp ánh xạ giả co chặt chứa thực sự lớp ánh xạ không giãn thì ta xét ví dụ dưới đây.
+
+\vd\rm Xét ánh xạ $T:\ \Big [\dfrac{1}{2},1 \Big ]\longrightarrow \mathbb R$ xác định bởi $Tx=x+\dfrac{1}{x}$. Khi đó, với $x=\dfrac{1}{2}, y=\dfrac{3}{4}$ ta có
+$$|T(x)-T(y)|=\dfrac{5}{3}|x-y|.$$
+Do đó, $T$ không phải là một ánh xạ không giãn. Tuy nhiên $T$ lại là $\dfrac{1}{2}$-giả co chặt. Thật vậy, với mọi $x,y\in \Big [\dfrac{1}{2},1\Big ]$, ta có
+\begin{align*}
+\|x-y\|^2+\dfrac{1}{2}\Big \|(I-T)x-(I-T)y \Big \|^2&=(x-y)^2 +\dfrac{1}{2}\Big (\dfrac{1}{x}-\dfrac{1}{y} \Big )^2\\
+&=\Big (1+\dfrac{1}{2x^2y^2} \Big )(x-y)^2
+\end{align*}
+và
+$$\|Tx-Ty\|^2=\Big (x-y -\dfrac{x-y}{xy} \Big )^2=\Big (1-\dfrac{1}{xy} \Big )^2(x-y)^2.$$
+Ta có
+\begin{align*}
+\Big (1+\dfrac{1}{2x^2y^2}\Big )(x-y)^2-\Big (1-\dfrac{1}{xy}\Big )^2(x-y)^2&=\Big (\dfrac{2}{xy}-\dfrac{1}{2x^2y^2} \Big )(x-y)^2\\
+&=\dfrac{4xy-1}{2x^2y^2}(x-y)^2 \geq 0,
+\end{align*}
+với mọi $x,y\in \Big [\dfrac{1}{2},1 \Big ]$. Do đó, $T$ là $\dfrac{1}{2}$-giả co chặt.
+\eproof
+
+\bd[xem \cite{AS}]\label{NDM} Nếu $A: C\longrightarrow \mathcal H$ là một ánh xạ $\eta$-đơn điệu mạnh ngược, thì $T=I-A$ là ánh xạ $k$-giả co chặt.
+
+\noindent \chm \rm \  Với mọi $x,y\in C$, ta có
+\begin{equation*}
+\begin{split}
+\|Tx-Ty\|^2&=\|(I-A)x-(I-A)y\|^2\\
+&=\|(x-y)-(Ax-Ay)\|^2\\
+&=\|x-y\|^2-2\langle Ax-Ay,x-y\rangle +\|Ax-Ay\|^2\\
+&\le \|x-y\|^2+k\|(I-T)x+(I-T)y\|^2,
+\end{split}
+\end{equation*}
+với $k=1-2\lambda\in [0,1)$ nếu $0<\lambda\le\dfrac{1}{2}$ và $k=0$ nếu $\lambda >\dfrac{1}{2}$. Vậy $T=I-A$ là $k$-giả co chặt.
+\eproof
+
+\begin{bd}[xem \cite{AS}]\label{bd2.2.2}
+	Cho $\mathcal H$ là một không gian Hilbert thực và ánh xạ  $F:\mathcal H\rightarrow \mathcal H$ là $\eta$-đơn điệu mạnh và $\gamma$-giả co chặt  với $\eta +\gamma >1$. Khi đó, với mỗi $t \in (0,1),I-tF$ là ánh xạ co với hệ số co $1-t\tau$, trong đó $\tau =1-\sqrt{(1-\eta)/\gamma}.$
+\end{bd}	
+
+Trong trường hợp ánh xạ đa trị, toán tử đơn điệu được định nghĩa như sau.
+
+\dn[xem \cite{AS}]\rm Một ánh xạ đa trị $A:\ \mathcal H\longrightarrow 2^{\mathcal H}$ được gọi là một toán tử đơn điệu nếu 
+\begin{equation}
+\langle u-v,x-y\rangle \geq 0
+\end{equation}
+với mọi $x,y\in \mathcal H$ và mọi $u\in A(x),\ v\in A(y)$.
+
+Toán tử đơn điệu $A$ được gọi là đơn điệu cực đại nếu đồ thị
+$$G(A)=\{(x,u)\in \mathcal H\times \mathcal H:\ u\in A(x)\}$$
+không bị chứa thực sự trong bất kỳ đồ thị của một toán tử đơn điệu nào khác trên $\mathcal H$.
+
+\vd\rm Toán tử $A:\mathbb R \to \mathbb R$ xác định bởi $A(x)=x^3$ với $x\in\mathbb R$ là đơn điệu cực đại trên $\mathbb R$.
+
+Thật vậy, hiển nhiên $A$ là một toán tử đơn điệu trên $\mathbb R$. Ta sẽ chỉ ra đồ thị của $A$ không là tập con thực sự của bất kỳ đồ thị của một toán tử đơn điệu nào khác trên $\mathbb R$. Giả sử tồn tại một toán tử đơn điệu $B$ trên $\mathbb R$ sao cho đồ thị của $B$ chứa thực sự đồ thị của $A$. Khi đó, tồn tại phần tử $x_0\in\mathbb R$ sao cho $(x_0, m)\in G(B)$, nhưng $(x_0, m)\notin G(A)$. Như vậy sẽ xảy ra hai trường hợp hoặc $A(x_0)> m$ hoặc $A(x_0)<m$.\\
+\underline{Trường hợp 1:} $A(x_0)> m$
+
+Giả sử $x_1$ là nghiệm của phương trình $A(x)=m$, tức là $A(x_1)=m$. Khi đó, $x_1<x_0$. Theo định lý giá trị trung bình, tồn tại $x_2\in (x_1,x_0)$ sao cho $n=A(x_2)\in (m, A(x_0))$. Từ $(x_0, m)\in G(B)$ và $(x_2, A(x_2))\in G(A)\subset G(B)$, suy ra
+$$(x_0-x_2)(m-A(x_2))\geq 0.$$
+Vì $x_0>x_2$, nên $A(x_2)\leq m$, điều này mâu thuẫn với $A(x_2)\in (m, A(x_0))$. Như vậy, không thể xảy ra trường hợp $A(x_0)> m$.\\
+\underline{Trường hợp 2:} $A(x_0)< m$
+
+Giả sử $x_1$ là nghiệm của phương trình $A(x)=m$, tức là $A(x_1)=m$. Khi đó, $x_1>x_0$. Theo định lý giá trị trung bình, tồn tại $x_2\in (x_0,x_1)$ sao cho $n=A(x_2)\in (A(x_0),m)$. Từ $(x_0, m)\in G(B)$ và $(x_2, A(x_2))\in G(A)\subset G(B)$, suy ra
+$$(x_0-x_2)(m-A(x_2))\geq 0.$$
+Vì $x_0<x_2$, nên $A(x_2)\geq   m$, điều này mâu thuẫn với $A(x_2)\in (A(x_0),m)$. Như vậy, không thể xảy ra trường hợp $A(x_0)< m$.
+
+Vậy không tồn tại toán tử đơn điệu $B$ trên $\mathbb R$ sao cho đồ thị của $B$ chứa thực sự đồ thị của $A$. Do đó, $A$ là một toán tử đơn điệu cực đại trên $\mathbb R$.
+\eproof
+
+\nx \rm \begin{enumerate}
+	\item Toán tử đơn điệu $A:\ \mathcal H\longrightarrow 2^{\mathcal H}$ là đơn điệu cực đại khi và chỉ khi $\mathcal R(I+\lambda A)=\mathcal H$ với mọi $\lambda >0$, ở đây $\mathcal R(I+\lambda A)$ là miền ảnh của $I+\lambda A$.
+\item Nếu $A$ là một toán tử đơn điệu cực đại, thì đồ thị của $A$ là demi-đóng, có nghĩa là nếu dãy $\{x_n\}$ trong $\mathcal H$ hội tụ yếu về $x^*$ và dãy $A(x_n)\ni y_n\longrightarrow f$, thì $f\in A(x^*)$.
+\end{enumerate}
+
+Từ nhận xét trên ta có một ví dụ khác dưới đây về toán tử đơn điệu cực đại.
+
+\vd\rm Cho $T:\ \mathcal H\longrightarrow \mathcal H$ là một ánh xạ không giãn, khi đó $A=I-T$ là một toán tử đơn điệu cực đại, ở đây $I$ là ánh xạ đồng nhất trên $\mathcal H$.
+
+Thật vậy, với mọi $x,y\in \mathcal H$, ta có
+$$\langle A(x)-A(y), x-y\rangle =\|x-y\|^2-\|Tx-Ty\|^2\geq 0,$$
+suy ra $A$ là một toán tử đơn điệu.
+
+Tiếp theo, ta chỉ ra tính cực đại của $A$. Với mỗi $\lambda >0$ và mỗi $y\in \mathcal H$, xét phương trình 
+\begin{equation}\label{td}
+\lambda A(x) +x=y.
+\end{equation}
+Phương trình trên tương đương với
+\begin{equation}\label{td1}
+x=\dfrac{1}{1+\lambda} (\lambda Tx+y).
+\end{equation}
+Xét ánh xạ $f:\ \mathcal H\longrightarrow \mathcal H$ cho bởi
+$$f(x)=\dfrac{1}{1+\lambda} (\lambda Tx+y)\quad \text{với mọi $x\in \mathcal H$.}$$
+Vì $T$ là ánh xạ không giãn nên
+\begin{align*}
+\Vert f(u)-f(v)\Vert = \dfrac{\lambda }{1+\lambda} \Vert Tu - Tv \Vert \le \dfrac{\lambda }{1+\lambda} \Vert u-v\Vert \quad \text{với mọi} \quad u,v\in \mathcal H .
+\end{align*}
+Do đó $f$ là ánh xạ co với hệ số co là $\dfrac{\lambda}{1+\lambda}\in (0,1)$. Do đó, theo nguyên lý ánh xạ co Banach ánh xạ $f$ có duy nhất điểm bất động, tức là phương trình \eqref{td1} có duy nhất nghiệm. Suy ra, phương trình \eqref{td} có duy nhất nghiệm. Vậy $A$ là một toán tử đơn điệu cực đại.
+\eproof
+
+\dn[xem \cite{AS}]\rm Cho $A:\ \mathcal H\longrightarrow 2^{\mathcal H}$ là một toán tử đơn điệu cực đại. Khi đó, ánh xạ $J_r^A=(I+rA)^{-1}$, $r>0$ được gọi là giải thức (toán tử giải) của $A$.
+
+\begin{vd} \rm Cho toán tử đơn điệu cực đại $A:\mathbb R^{2} \rightarrow \mathbb R^{2}$ xác định bởi
+	\begin{align*}
+	A(x)= \begin{pmatrix}
+	2 & 2\\ 
+	2 & 2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_{1}\\x_{2} 
+	\end{pmatrix}, \quad x=(x_{1},x_{2})^{T} \in \mathbb R^{2}.
+	\end{align*}
+	Toán tử giải của $A$ là 
+	\begin{align*}
+	J_{r}^{A}=(I+rA)^{-1}=\begin{pmatrix}
+	\frac{1+2r}{4r+1} & \frac{-2r}{4r+1}\\ 
+	\frac{-2r}{4r+1} & \frac{1+2r}{4r+1}
+	\end{pmatrix}, \quad r>0.
+	\end{align*}
+\end{vd}
+
+\tc \rm \begin{enumerate}
+\item[(a)] Giải thức $J_r^A$ của toán tử đơn điệu cực đại $A$ là một ánh xạ đơn trị, không giãn và $A(x)\ni 0$ khi và chỉ khi $J_r^A(x)=x$ với $x\in \mathcal H$. 
+\item[(b)] Với mọi số dương $\lambda $ và $\mu$, ta luôn có đẳng thức sau
+\begin{equation}
+J^A_\lambda x =J^A_\mu \Big(\frac{\mu }{\lambda }x+\Big(1-\frac{\mu }{\lambda }\Big)J^A_\lambda x\Big),\quad  x\in \mathcal H.
+\end{equation}
+\end{enumerate}
+
+\noindent \chm \ (a) Trước hết ta chứng minh $J^A_r$ là ánh xạ đơn trị. Thật vậy, giả sử tồn tại $x\in \mathcal H$ sao cho $J_r^A(x)$ nhận ít nhất hai giá trị $y$ và $z$. Từ định nghĩa của toán tử giải, suy ra
+$$x-y\in r A(y),\quad  x-z\in r A(z).$$
+Từ tính đơn điệu của $A$, suy ra
+$$\langle (x-y)-(x-z), y-z\rangle \geq 0.$$
+Suy ra, $\|y-z\|^2\leq 0$. Do đó, $y=z$. Vậy $J_r^A$ là một ánh xạ đơn trị.
+
+Tiếp theo, ta chỉ ra $J_r^A$ là một ánh xạ không giãn. Với mọi $x,y\in \mathcal H$, đặt $z_1=J_r^A(x)$ và $z_2=J_r^A(y)$, tức là
+$$x-z_1\in rA(z_1),\quad  y-z_2\in r A(z_2).$$
+Từ tính đơn điệu của $A$, ta có
+$$\langle x-z_1-y+z_2,z_1-z_2\rangle \geq 0.$$
+Suy ra
+$$\|z_1-z_2\|^2\leq \langle x-y, z_1-z_2\rangle \leq \|x-y\|.\|z_1-z_2\|.$$
+Do đó, $\|z_1-z_2\|\leq \|x-y\|$, hay $J_r^A$ là một ánh xạ không giãn.
+
+Bây giờ ta chỉ ra tập không điểm của toán tử đơn điệu cực đại $A$ trùng với tập điểm bất động của toán tử giải $J^A_r$. Thật vậy, giả sử, $x=J_r^A(x)$. Điều này tương đương với $x\in x+rA(x)$ hay $A(x)\ni 0$.
+
+(b) Với mọi số dương $\lambda $ và $\mu$, ta luôn có đẳng thức sau
+\begin{equation}
+J^A_\lambda x =J^A_\mu \Big(\frac{\mu }{\lambda }x+\Big(1-\frac{\mu }{\lambda }\Big)J^A_\lambda x\Big),\quad  x\in \mathcal H.
+\end{equation}
+Thật vậy, đặt
+$$y=J^A_\mu \Big(\frac{\mu }{\lambda }x+\Big(1-\frac{\mu }{\lambda }\Big)J^A_\lambda x\Big),\quad  z=J_\lambda ^A(x).$$
+Suy ra,
+$$\frac{\mu }{\lambda }x+\Big(1-\frac{\mu }{\lambda }\Big)z\in y +\mu A(y), \quad x\in z+\lambda A(z).$$
+Từ tính đơn điệu của $A$, suy ra
+$$\langle\mu x +(\lambda -\mu )z-\lambda y -\mu x +\mu z, y-z\rangle\geq 0,$$
+tương đương với $-\lambda\|y-z\|^2\geq 0 $. Suy ra, $y=z$ và do đó ta được điều phải chứng minh.
+\eproof
+
+
+%\dn[xem \cite{AS}]\rm Một ánh xạ $A:\ C\longrightarrow \mathcal H$ được gọi là $\lambda$-ngược đơn điệu mạnh nếu tồn tại hằng số dương $\lambda$ sao cho $$\langle A(x)-A(y),x-y\rangle \geq \lambda \|A(x)-A(y)\|^2$$ với mọi $x,y\in C$.
+
+
+Một số bổ đề dưới đây được dùng để chứng minh định lý hội của phương pháp lặp ở Chương 2.
+
+\begin{bd}[xem \cite{AS}] \label{bd2.2.3}
+	Cho $\{a_{k}\}$ là một dãy các số thực không âm thỏa mãn các điều kiện sau $a_{k+1} \leq (1-b_{k})a_{k}+b_{k}c_{k},$ trong đó $\lbrace b_{k} \rbrace$ và $\lbrace c_{k} \rbrace$ là dãy các số thực sao cho
+	\begin{itemize}
+		\item[$(i)$]$b_{k} \in [0,1]$, $b_{k} \rightarrow 0 $ khi $k \rightarrow \infty$ và $\sum_{k=1}^{\infty}b_{k}=\infty;$
+		\item[$(ii)$]$\limsup_{k \rightarrow \infty}c_{k}\leq 0.$
+	\end{itemize}
+	Khi đó, $\lim_{k\rightarrow \infty}a_{k}=0.$
+\end{bd}
+
+	Cho $C$ là một tập con đóng của không gian Hilbert thực $\mathcal H$. Ta sẽ sử dụng ký hiệu sau:
+\begin{align*}
+\vert C\vert=\inf \lbrace \Vert x \Vert : x \in C \rbrace.
+\end{align*}
+
+\begin{bd}[xem tài liệu trích dẫn trong \cite{BHN}] \label{bd2.2.4}
+	Cho $A$ là một ánh xạ đơn điệu trong không gian Hilbert thực $\mathcal H$. Khi đó, với mỗi $\lambda > 0$, ta có bất đẳng thức
+	$$\Vert J^A_{\lambda}x-J^A_{\lambda}y \Vert^{2} \leq \Vert x-y \Vert^{2} - \Vert x-y-(J^A_{\lambda}x-J^A_{\lambda}y) \Vert^{2} \quad \forall x,y \in \mathcal H $$
+	và $ \Vert A_{\lambda}x\Vert \geq \Vert Ax \Vert$ với mọi $x \in \mathcal{D}(A)\cap \mathcal{R}(I+\lambda A)$ trong đó $\mathcal D(A)$ là ký hiệu miền xác định của ánh xạ $A$, $\mathcal R(A)$ là ký hiệu miền giá trị của $A$ và $A_{\lambda}=\lambda ^{-1}(I-J^A_{\lambda})$.
+\end{bd}
+
+%Trong trường hợp $A$ là toán tử đơn điệu cực đại, $Ax$ là tập con lồi đóng trong không gian Hilbert thực $\mathcal H$. Khi đó, $Ax$ có một điểm duy nhất đơn trị với định chuẩn cực tiểu và vùng chọn cực tiểu của $A$, được định nghĩa là
+%\begin{align*}
+%A^{0}x= \lbrace y \in Ax: \Vert y \Vert = \vert Ax \vert \rbrace,
+%\end{align*}
+%là đơn trị.
+
+\begin{dn}[xem \cite{BHN}]\rm Ánh xạ $T:C\to \mathcal H$ được gọi là ánh xạ trung bình, nếu $T=(1-\alpha)I + \alpha N $ với $\alpha \in (0,1)$, $N$ là ánh xạ không giãn và ta nói $T$ là ánh xạ $\alpha$-trung bình.
+\end{dn}
+
+Tập của các điểm bất động của ánh xạ $T$ được ký hiệu là Fix$(T)$, tức là, $\text{Fix}(T)=\lbrace x \in C:Tx = x\rbrace.$
+\begin{bd}[xem tài liệu trích dẫn trong \cite{BHN}] \label{bd2.2.5}
+	Nếu các ánh xạ $\lbrace T_{i} \rbrace _{i=1}^{k}$ là trung bình và có một điểm bất động chung, thì
+	\begin{align*}
+	\text{\rm Fix}(T_{1}T_{2}\dots T_{k})=\bigcap_{i=1}^{k} \text{\rm Fix}(T_{i}).
+	\end{align*}
+\end{bd}
+\begin{bd}[xem tài liệu trích dẫn trong \cite{BHN}] \label{bd2.2.6}
+	Cho $C$ là một tập con lồi đóng của không gian Hilbert thực $\mathcal H$ và $T:C \rightarrow C$ là một ánh xạ không giãn với $\text{\rm Fix}(T)\neq \emptyset$. Nếu $\lbrace x^{k} \rbrace$ là một dãy trong $C$ hội tụ yếu tới $x$ và nếu $(I-T)x^{k}$ hội tụ mạnh tới $y$, thì $(I-T)x=y$. Đặc biệt nếu $y=0$ thì $x \in \text{\rm Fix}(T)$.
+\end{bd}
+
+\subsection{Bài toán không điểm của toán tử đơn điệu cực đại}
+
+Cho $\mathcal H$ là một không gian Hilbert thực, $A: \mathcal H\to 2^{\mathcal H}$ là một toán tử đơn điệu cực đại. Bài toán tìm phần tử $x^*\in \mathcal H$ sao cho $0\in A(x^*)$ được gọi là bài toán không điểm của toán tử đơn điệu cực đại $A$. Điểm $x^*\in \mathcal H$ thỏa mãn bao hàm thức này gọi là không điểm của toán tử $A$. Ký hiệu tập không điểm của toán tử $A$ là $Zer A$.
+
+\begin{vd} \rm Cho toán tử đơn điệu cực đại $A:\mathbb R^{2} \rightarrow \mathbb R^{2}$ xác định bởi
+	\begin{align*}
+	A(x)= \begin{pmatrix}
+	2 & 2\\ 
+	2 & 2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_{1}\\x_{2} 
+	\end{pmatrix}, \quad x=(x_{1},x_{2})^{T} \in \mathbb R^{2}.
+	\end{align*}
+Tập không điểm của toán tử $A$ là
+\begin{align*}
+Zer(A) = \lbrace x=(x_{1},x_{2})^{\top} \in \mathbb R^{2}:x_{2} = -x_{1} \rbrace.
+\end{align*}
+\end{vd}
+
+\section{Bài toán bất đẳng thức biến phân}
+
+
+\subsection{Giới thiệu về bất đẳng thức biến phân}
+
+%Bài toán bất đẳng thức biến phân trong không gian vô hạn chiều được nhà toán học người Italia là G. Stampacchia (xem \cite{Stam}) và các đồng sự đưa ra lần đầu tiên vào những năm đầu của thập niên 60 thế kỉ XX trong khi nghiên cứu về bài toán biên tự do. Bất đẳng thức biến phân có vai trò quan trọng trong nghiên cứu toán học lý thuyết về bài toán tối ưu, bài toán điều khiển, bài toán cân bằng, bài toán bù, bài toán giá trị biên v.v \dots Do đó, việc nghiên cứu các phương pháp giải bất đẳng thức biến phân đang là một trong những đề tài thu hút được sự quan tâm nghiên cứu của nhiều nhà toán học trong và ngoài nước và đã nhận được nhiều kết quả hay, sâu sắc. Bên cạnh đó, bất đẳng thức biến phân còn có nhiều ứng dụng cho các bài toán thực tế như mô hình cân bằng trong kinh tế, giao thông, bài toán khôi phục tín hiệu, bài toán công nghệ lọc không gian, bài toán phân phối băng thông v.v \dots Cho đến nay vẫn còn nhiều vấn đề mới và khó của bất đẳng thức biến phân cần được quan tâm nghiên cứu với những công cụ toán học hiện đại.  Một trong những hướng nghiên cứu đang được quan tâm  là xây dựng phương pháp giải bất đẳng thức biến phân với tập ràng buộc là tập điểm bất động chung của một họ ánh xạ không giãn, tập không điểm chung của một họ ánh xạ loại $j$-đơn điệu, tập nghiệm chung của bài toán cân bằng, bài toán bất đẳng thức biến phân, bài toán điểm bất động trong không gian Hilbert và không gian Banach. 
+
+Trong đồ án này chúng tôi xét bài toán bất đẳng thức biến phân đơn điệu trong không gian Hilbert thực $\mathcal H$. Bài toán bất đẳng thức biến phân được trình bày dưới đây.
+
+\begin{bt}\rm 
+	Cho $C$ là một tập con lồi đóng khác rỗng của không gian Hilbert thực $\mathcal H$, $F:C\to \mathcal H$ là một ánh xạ đi từ $C$ vào $\mathcal H$. Bài toán bất đẳng thức biến phân với ánh xạ $F$ và tập ràng buộc $C$, ký hiệu là  VIP$(F,C)$, được phát biểu như sau:
+	\begin{align}\label{VI}
+	\text{Tìm $x^*\in C$ sao cho } \langle F(x^*), x-x^*\rangle \ge 0 \quad \forall x\in C. 
+	\end{align}
+	Nếu $F$ là ánh xạ đơn điệu thì bất đẳng thức biến phân \eqref{VI} được gọi là bất đẳng thức biến phân đơn điệu.
+\end{bt} 
+Tập nghiệm của bài toán bất đẳng thức biến phân VIP$(F,C)$ được ký hiệu là $\mathcal S$.
+
+\begin{nx}\rm Trong trường hợp ánh xạ $F$ có dạng $F(x) = x- x^+$ với mọi $x\in C$, $x^+\in \mathcal H$ cho trước, theo Mệnh đề \ref{md12}
+	\begin{align*}
+	\langle F(x^*), x- x^*\rangle & \ge 0 \quad  \forall x\in C \\
+	&\Leftrightarrow  \langle x^*-x^+, x - x^* \rangle \ge 0 \quad \forall x\in C\\
+	& \Leftrightarrow  \langle x^+-x^*, x - x^* \rangle \le 0 \quad \forall x\in C  \\
+	& \Leftrightarrow   x^* = P_C(x^+).
+	\end{align*}
+	Do đó, $\mathcal S = \{P_C{(x^+)} \}$.
+\end{nx}
+
+Sau đây là mối liên hệ giữa bài toán bất đẳng thức biến phân với bài toán giải phương trình toán tử.
+\begin{nx} \rm Cho $\mathcal H = \mathbb {R}^N$, không gian Euclid $N$ chiều, $C= \mathbb {R}^N $ và ánh xạ $F: \mathbb {R}^N\rightarrow \mathbb {R}^N.$ Khi đó, $x^*\in \mathbb {R}^n$ là nghiệm của bài toán bất đẳng thức biến phân VIP$(F,C)$ khi và chỉ khi $x^*$ là nghiệm của hệ phương trình $F(x^*)= 0.$
+	
+	Thật vậy nếu  $F(x^*)= 0$ thì bất đẳng thức (\ref{VI}) xảy ra dấu bằng. Do đó, ta có $x^*\in \mathcal S$.
+	
+	Ngược lại, nếu $x^*\in \mathcal S$ thì
+	$$\langle F(x^*), x- x^*\rangle  \ge 0 \quad \forall x\in \mathbb {R}^n.$$
+	Chọn $x = x^* -F(x^*),$ ta được
+	$$\langle F(x^*), x- x^*\rangle  \ge 0\quad \text{hay} -\Vert F(x^*) \Vert^2 \geq 0. $$ 
+	
+	\eproof
+\end{nx}
+
+Trong trường hợp $\mathcal H$ là không gian hữu hạn chiều $\mathbb {R}^N$, bài toán bất đẳng thức biến phân hữu hạn chiều với ánh xạ $F$ đơn trị và tập ràng buộc $C$ là bài toán tìm phần tử $x^* \in C$ sao cho
+	\begin{equation}{\label{e11}}
+	\left\langle F(x^*), x- x^* \right\rangle \geq 0 \quad \forall x \in C. 
+	\end{equation}
+Ý nghĩa hình học của công thức \eqref{e11} có thể giải thích như sau: $x^*$ là nghiệm của bất đẳng thức biến phân \eqref{e11} khi và chỉ khi $F(x^*)$ tạo thành một góc không tù với mỗi véctơ $x-x^*$, với mọi $x \in C$. Ta có thể chứng minh khẳng định này bằng khái niệm về nón chuẩn tắc.
+\begin{dn}[xem \cite{Kon}] \rm 
+	Cho $C \ne \emptyset$ là tập lồi đóng trong $\mathbb {R}^N$ và $x^* \in C$. Nón chuẩn tắc tới $C$ tại $x^*$ là tập
+	$$
+	N_C(x^*)  =\{d \in \mathbb{R}^N: \ \left\langle d, x-x^*\right\rangle \leq 0 \quad \forall x \in C\}. 
+	$$
+\end{dn}
+Các véctơ $d \in N_C(x^*)$ được gọi là các véctơ chuẩn tắc tới $C$ tại $x^*$. 
+
+Dễ thấy, 
+\begin{align*}
+\eqref{e11} & \Leftrightarrow  \left\langle -A(x^*), x-x^* \right\rangle \leq 0 \quad \forall x \in C\\ 
+& \Leftrightarrow  -A(x^*) \ \ \text{là véctơ chuẩn tắc tới} \  C \ \text{tại } \  x^* \\
+&\Leftrightarrow  -A(x^*) \in N_C(x^*),
+\end{align*}
+hay
+$$
+0 \in A(x^*)+N_C(x^*). 
+$$
+Khi $C$ là tập con lồi đóng của $\mathbb{R}^N$ và $F$ là ánh xạ liên tục thì tập nghiệm của bài toán \eqref{e11} là tập hợp đóng trong $\mathbb{R}^N$.
+
+\subsection{Ví dụ về bất đẳng thức biến phân}
+
+\begin{dn}[Bài toán cực trị] \rm  Cho $f$ là một hàm số khả vi trên đoạn $[a,b] \subset \mathbb{R},x^{*}\in [a,b]$, ta nói
+	\begin{itemize}
+		\item[(a)] Hàm $f$ đạt cực đại tại điểm $x^{*}$ nếu $f(x^{*})\geq f(x)$ với mọi $ x \in [a,b]$.
+		\item[(b)] Hàm $f$ đạt cực tiểu tại điểm $x^{*}$ nếu $f(x^{*})\leq f(x)$ với mọi $ x \in [a,b]$.
+	\end{itemize}
+\end{dn}
+
+\begin{nx}[Điều kiện cần để hàm số đạt cực trị] \rm Hàm $f$ đạt cực trị tại $x^{*}$ và có đạo hàm tại $x^{*}$ thì $f'(x^{*})=0$.
+\end{nx}
+
+\begin{nx}[Điều kiện đủ của cực trị] \rm  Giả sử hàm $f$ khả vi hai lần trên đoạn $[a,b]$.
+	\begin{itemize}
+		\item[(a)] Nếu $f''(x^{*})>0$ thì $x^{*}$ là điểm cực tiểu.
+		\item[(b)] Nếu $f''(x^{*})<0$ thì $x^{*}$ là điểm cực đại. 
+	\end{itemize}	
+\end{nx}	
+
+
+%\end{dn}
+\begin{vd}\label{vdVIP} \rm Cho $f$ là hàm số khả vi trên $[a,b] \subset \mathbb{R}$. Tìm $x^* \in [a,b]$ sao cho 
+	$$
+	f(x^*)= \displaystyle \min_{x\in [a,b]} f(x).
+	$$
+	\begin{itemize}
+		\item[(a)] Nếu $x^* \in (a,b)$ thì $f'(x^*)=0$.
+		\item[(b)] Nếu $x^*=a$ thì $f'(x^*) \geq 0$.
+		\item[(c)] Nếu $x^*=b$ thì $f'(x^*) \leq 0$.
+	\end{itemize}
+	Trong cả ba trường hợp ta đều có $f'(x^*)(x-x^*) \geq 0 $. Đây là một bất đẳng thức biến phân dạng \eqref{VI}.
+\end{vd}
+
+%\subsection{Bất đẳng thức biến phân trong không gian Hilbert}
+
+\subsection{Sự tồn tại nghiệm của bất đẳng thức biến phân}
+  Sự tồn tại duy nhất nghiệm của bài toán bất đẳng thức biến phân \eqref{VI} được nêu trong mệnh đề dưới đây.
+
+\begin{md}[xem \cite{Kon}]  Cho $ \mathcal H$ là một không gian Hilbert thực, $C$ là một tập con lồi đóng khác rỗng của $ \mathcal H$. Nếu ánh xạ  $F: C \to {\mathcal H}$ là ánh xạ $ \eta$-đơn điệu mạnh trên $C$ và $L$-liên tục Lipschitz trên $C$ thì bài toán bất đẳng thức biến phân \eqref{VI} có nghiệm duy nhất.
+\end{md}
+
+\noindent \chm \rm \ 
+%\begin{proof}
+	Chọn $0 < \mu < \dfrac{2\eta}{L^2}$ và xét ánh xạ $T: C \to C$ được xác định bởi 
+	$$T(x) = P_C(x- \mu F(x)), \quad \forall x \in C.$$
+	Khi đó, với mọi $x,y \in C$, sử dụng tính chất không giãn của ánh xạ $P_C$, ta nhận được:
+	\begin{alignat*}{2}
+	\| T(x)-T(y) \|^2 =& \| P_C(x- \mu F(x)) - P_C(y- \mu F(y))\|^2 \notag\\
+	\leq & \| x - \mu F(x) - y + \mu F(y) \|^2 \notag\\
+	= & \| x - y \|^2 - 2 \mu \langle F(x) - F(y) , x - y \rangle + \mu ^2 \| F(x) - F(y)\|^2.
+	\end{alignat*}
+	Do $A$ là ánh xạ $L$-liên tục Lipschitz và $\eta$-đơn điệu mạnh trên $C$, nên từ bất đẳng thức trên ta nhận được
+	\begin{alignat*}{2}
+	\|T(x) - T(y) \|^2 \leq & \| x - y \|^2 - 2\mu \eta \| x - y\|^2 +\mu^2 L^2 \| x - y \|^2 \notag\\
+	= & (1 - 2 \mu \eta + \mu^2  L^2) \| x- y \|^2.
+	\end{alignat*}
+	Do đó, 
+	\begin{alignat*}{2}
+	\| T(x) - T(y) \| \leq & \sqrt{(1 - \mu (2 \eta + \mu L^2)} \| x- y \|.\notag\\
+	= & \rho \| x- y \|, 
+	\end{alignat*}
+	trong đó, $\rho =  \sqrt{(1 - \mu (2 \eta + \mu L^2)} \in [0, 1).$ Vậy $T: C \to C$ là ánh xạ co. Theo nguyên lý ánh xạ co Banach, tồn tại duy nhất $x^* \in C$ sao cho $T(x^*) = x^*$. Do đó, $x^* \in$ $\mathcal S$, tập nghiệm của bất đẳng thức biến phân \eqref{VI}.
+%\end{proof}
+
+\eproof
+
+
+\chapter{Phương pháp lặp giải bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại}
+
+Trong những năm gần đây, nhiều phương pháp số khác nhau đã được phát triển và áp dụng để tìm nghiệm gần đúng của bài toán bất đẳng thức biến phân \eqref{VI}, trong đó phương pháp chiếu khá hữu dụng, dễ thực thi trên máy tính. Chương này trình bày một phương pháp chiếu giải bài toán bất đẳng thức biến phân đơn điệu trên tập không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực $\mathcal H$. Nội dung của chương được viết trên cơ sở bài báo của Nguyễn Bường, Phạm Thị Thu Hoài và Nguyễn Dương Nguyễn công bố năm 2018 (xem \cite{BHN}).
+
+Nội dung của chương được trình bày trong ba mục. Mục thứ nhất giới thiệu bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực $\mathcal H$ cùng một số kết quả nghiên cứu về bài toán này. Mục thứ hai trình bày một phương pháp chiếu giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại cùng định lý hội tụ mạnh của phương pháp. Mục cuối cùng của chương dành cho việc đưa ra áp dụng giải bài toán cực trị và đề xuất, tính toán ví dụ số minh họa cho sự hội tụ của phương pháp. Kết quả tính toán được tác giả đồ án đề xuất và viết trên ngôn ngữ MATLAB.
+
+
+\section{Bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại}
+
+\subsection{Bài toán}
+
+Cho $\mathcal H$ là một không gian Hilbert thực với tích vô hướng $\langle .,. \rangle$ và chuẩn $\Vert . \Vert$,   $A$ là một toán tử đơn điệu cực đại trong $\mathcal H$ và
+%, tức là, $A$ đơn điệu và $A$ thỏa mãn điều kiện  $\langle u-v,x-y \rangle \geq 0$ với mọi $u \in Ax, v \in Ay$ với $x,y$ trong miền xác định của $A$, và đồ thị của $A$ không chứa đồ thị của bất kỳ ánh xạ đơn điệu nào khác. 
+ $F:\mathcal H\rightarrow \mathcal H$ là một toán tử $\eta$-đơn điệu mạnh và $\gamma$-giả co chặt.
+ % , tương tự, $F$ thỏa mãn các điều kiện sau:\\$$ \left \langle Fx-Fy,x-y \right \rangle \geq \eta \left \| x-y \right \|^{2} $$ và  $$ \left \langle Fx-Fy,x-y \right \rangle \leq  \left \| x-y \right \|^{2}-\gamma \left \| (I-F)x-(I-F)y \right \|^{2},$$trong đó $\eta >0$ và $\gamma \in [0,1)$ là những số không đổi.\\
+
+Ta xét bài toán tìm một điểm $p_{*} \in \mathcal H$ sao cho
+\begin{align} \label{2.1.1}
+ p_{*} \in C: \quad \left \langle Fp_{*},p_{*}-p \right \rangle \leq 0 \quad \forall p \in C,
+\end{align}
+trong đó $C=ZerA$, tập không điểm của toán tử đơn điệu cực đại $A$ trong $\mathcal H$. Bài toán \eqref{2.1.1} được gọi là bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại.
+
+Bài toán bất đẳng thức biến phân \eqref{2.1.1} được xem xét lần đầu tiên vào năm 1972 bởi Sibony, khi $C$ là tập nghiệm của phương trình toán tử đơn điệu. Vào năm 1976, Kluge đã nghiên cứu bài toán với trường hợp $C$ là tập nghiệm của bài toán bất đẳng thức biến phân. Đến năm 2002, Yamada đã xét trường hợp cụ thể, khi $C$ là tập điểm bất động của các ánh xạ không giãn trên $\mathcal H$. Gần đây, Semenov đã nghiên cứu bài toán \eqref{2.1.1} khi $C$ là một tập các nghiệm cho các bài toán đẳng thức biến phân, mà các ánh xạ giải thức là toán tử đơn điệu cực đại (xem tài liệu trích dẫn trong \cite{BHN}). 
+
+\subsection{Một số phương pháp tìm không điểm của toán tử đơn điệu cực đại}
+
+Bài toán tìm một tập không điểm của ánh xạ đơn điệu cực đại đã được nhiều nhà toán học quan tâm nghiên cứu. Một thuật toán cơ bản để tìm tập không điểm của một ánh xạ đơn điệu cực đại $A$ trong không gian Hilbert $\mathcal H$ là phương pháp điểm gần kề: $x_{1} \in \mathcal H$ và
+\begin{align} \label{2.1.2}
+ x^{k+1}=J^A_{k}x^{k}+e^{k},\quad k \geq 1, 
+\end{align}
+trong đó $J^A_{k}=(I+r_{k}A)^{-1},\left \{ r_{k} \right \}\subset (\varepsilon, \infty)$ với $\varepsilon >0$ và $e^{k}$ là một véc-tơ sai số. Phương pháp này được giới thiệu lần đầu bởi Martinet. Rockafellar đã chứng minh rằng nếu $\liminf_{k \rightarrow \infty}r_{k}>0$, $ \sum _{k\geq 1}\left \| e^{k} \right \| < \infty,$ và $ ZerA \neq \varnothing $, thì khi $k \rightarrow \infty$, dãy $\{x^{k}\}$ được xác định bởi \eqref{2.1.2}, hội tụ yếu tới một điểm trong $ZerA$ (xem tài liệu trích dẫn trong \cite{BHN}). 
+	
+	Để có được một dãy hội tụ mạnh từ phương pháp điểm gần kề, Kamimura và Takahashi đã đưa ra một thuật toán được xác định bởi
+\begin{align} \label{2.1.3}
+	y^{k}\approx J^A_{k}x^{k}, \quad \Vert y^{k}-J^A_{k}x^{k} \Vert\leq  \delta _{k}, \quad x^{k+1}=t_{k}u+(1-t_{k})y^{k},
+\end{align}
+trong đó $u$ là một điểm xác định trong $\mathcal H$, và họ đã được chứng minh được rằng dãy $\{ x^{k} \}$ xác định bởi \eqref{2.1.3}, khi $k\rightarrow \infty$, hội tụ mạnh đến $P_{ZerA}u$, phép chiếu mêtric của $u$ trên tập $ZerA$, dưới điều kiện sau đây (xem tài liệu trích dẫn trong \cite{BHN}):
+\begin{description}
+	\item[(C1)] $t_{k}\in (0,1)$ với mọi $k\geq 1$, $ \lim_{k \rightarrow \infty}t_{k}=0$ và $\sum_{\infty}^{k=1}t_{k}=\infty;$ 
+	\item[(C2)] $r_{k}\in (0,\infty)$ với mọi $k\geq 1$, $ \lim_{k \rightarrow \infty}r_{k}=\infty;$
+	\item[(C3)] $\sum_{\infty}^{k=1}\delta_{k}<\infty.$ 
+\end{description}
+Cũng tại thời điểm này, Solodov và Svaiter đề xuất một phiên bản khác của \eqref{2.1.2}. Phương pháp của họ đã tạo ra một dãy $\{x^{k}\}$, thỏa mãn
+\begin{align*}
+x^{k+1}=P_{H^{k}\cap W^{k}}x^{1},
+\end{align*}
+trong đó 
+\begin{align*}
+H^{k}=\lbrace z \in \mathcal H:\langle z-y^{k},v^{k} \rangle \leq 0\rbrace, \ W^{k}=\lbrace z \in \mathcal H:\langle z-y^{k},x^{1}-x^{k} \rangle \leq 0\rbrace
+\end{align*}
+và $(y^{k},v^{k})\in \mathcal H\times \mathcal H$ là một nghiệm không chính xác của bài toán $0 \in Ax+\mu (x-x^{k})$. Ở mỗi lần lặp, phương pháp này bao gồm hai bước: bước thứ nhất, với $x^{k}$ được tìm ra từ vòng lặp trước, tạo ra một điểm $y^{k}$ theo phương pháp điểm gần kề. Trong bước thứ hai, $y^{k}$ tìm được ở bước thứ nhất được sử dụng và tham số $r_{k}>0$ và véc-tơ sai số $e^{k}$ được lựa chọn thích hợp để xây dựng các không gian con $H^{k}$ và $W^{k}$. Khi đó $x^{k+1}$ được xác định như là hình chiếu của $x^{1}$ lên $H^{k}\cap W^{k}$ (xem tài liệu trích dẫn trong \cite{BHN}). Tiếp theo, phương pháp xấp xỉ Tikhonov (prox-Tikhonov) của Lehdili và Moudafi đã được mở rộng bởi Xu theo cách sau (xem tài liệu trích dẫn trong \cite{BHN}):
+\begin{align} \label{2.1.4}
+x^{k+1}=J^A_{k}[t_{k}u+(1-t_{k})x^{k}+e^{k}],\quad k\geq 1.
+\end{align}
+Hơn nữa, Boikanyo và Morosanu (xem tài liệu trích dẫn trong \cite{BHN}) đã chỉ ra rằng \eqref{2.1.4} tương đương với
+\begin{align} \label{2.1.5}
+y^{k+1}=t_{k}u+(1-t_{k})J^A_{k}y^{k}+e^{k},
+\end{align}
+và đã chứng minh dãy $\{y^{k}\}$  được định nghĩa bởi \eqref{2.1.5} hội tụ mạnh nếu có các ràng buộc {\bf (C1)}, {\bf (C2)} hoặc {\bf (C3)} hoặc {\bf (C3$'$)}:   $\lim_{k \rightarrow \infty}(\Vert e^{k} \Vert / t_{k})=0.$
+
+
+Gần đây Tian và Song đã chứng minh sự hội tụ mạnh của \eqref{2.1.4} dưới các ràng buộc {\bf (C1)}, {\bf ({C2}$'$)}: $\liminf_{r_{k}}>0$ và {\bf (C3)}. Wang đã đề xuất một phương pháp để giải \eqref{2.1.1} với các ràng buộc, một trong số đó là {\bf ({C2}$'$)}. Rõ ràng, nếu $r_{k}$ thỏa mãn ràng buộc {\bf (C2)} hoặc {\bf ({C2}$'$)}, thì tồn tại hằng số dương $ \varepsilon $ sao cho $r_{k} \geq  \varepsilon $ với mọi $k \geq 1$. Do đó, $\sum_{k=1}^{\infty}r_{k}=+\infty$ (xem tài liệu trích dẫn trong \cite{BHN}). 
+
+Một câu hỏi đặt ra là: có thể thay thế các ràng buộc {\bf (C2)} hoặc {\bf ({C2}$'$)} bằng $\sum_{k=1}^{\infty}r_{k}<+\infty$ được không? Trong mục tiếp theo đồ án trình bày một kết quả để trả lời cho câu hỏi này.
+
+\section{Phương pháp chiếu giải bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại}
+
+Mục này ta xét một phương pháp chiếu giải bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại trong \cite{BHN}. 
+
+\subsection{Mô tả phương pháp}
+
+Nguyễn Bường và các cộng sự đã trả lời câu hỏi trên bằng việc cải tiến \eqref{2.1.2} để tạo ra các dãy lặp mới $\lbrace x^{k}\rbrace$ và $\lbrace z^{k}\rbrace$ bởi
+\begin{align} \label{2.1.6}
+x^{k+1}=J^A_{k}(t_{k}u+(1-t_{k})x^{k}+e^{k}),
+\end{align}
+và
+\begin{align} \label{2.1.7}
+z^{k+1}=t_{k}u+(1-t_{k})J^A_{k}z^{k}+e^{k},
+\end{align}
+trong đó, tại vòng lặp thứ $k$, $J^A_{k}=J_{1}^{k}=J_{1}J_{2}\dots J_{k}$ là một tích của $k$ toán tử giải thức $J_{i},i=1,2,\dots,k$ với $r_{k} \rightarrow 0$ và $\sum_{k=1}^{\infty}r_{k}=+\infty$.
+
+Rõ ràng, phương pháp \eqref{2.1.6} và \eqref{2.1.7} hoàn toàn khác với \eqref{2.1.4} và \eqref{2.1.5}, trong đó chỉ có một toán tử giải thức $J^A_{k}$. Ta sẽ chỉ ra rằng \eqref{2.1.6} và \eqref{2.1.7} là những trường hợp đặc biệt của phương pháp:
+\begin{align} \label{2.1.8}
+\left\{\begin{matrix}
+x^{1} \in \mathcal H, $  tùy ý$
+\\ 
+x^{k+1}=J^A_{k}[(I-t_{k}F)x^{k}+e^{k}]
+\end{matrix}\right.
+\end{align}
+hội tụ mạnh đến điểm $p_{*}$ trong \eqref{2.1.1}, dưới các điều kiện {\bf (C1)}, {\bf ({C2}$''$)}: $r_{i}>0$ với mọi $i \geq 1$ và $\sum_{i=1}^{\infty}r_{i}<+\infty$ và {\bf ({C3}$'$)}. Có thể thấy, nếu $r_{k}$ thỏa mãn ràng buộc {\bf ({C2}$''$)} thì $r_{k} \rightarrow 0$ khi $k \rightarrow \infty$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\subsection{Mô tả phương pháp lặp}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sự hội tụ mạnh}
+
+\begin{md}[xem \cite{BHN}] \label{mde2.2.7}
+	Cho $F$ là một ánh xạ $\eta$-đơn điệu mạnh và $\gamma$-giả co chặt trong không gian Hilbert thực $\mathcal H$ với $\eta + \gamma >1$ và $T$ là một ánh xạ không giãn trên $\mathcal H$ sao cho $C:= \text{\rm Fix}(T) \neq \emptyset$. Với mỗi $t>0$, chọn một số $\lambda_{t} \in (0,1)$ tùy ý sao cho $t \rightarrow 0, \lambda_{t} \rightarrow 0$ và dãy $\lbrace y^{t} \rbrace$ được xác định bằng
+	\begin{align} \label{2.2.1}
+	y^{t}=(I-\lambda_{t}F)Ty^{t}.
+	\end{align}
+	Khi đó, khi $t \rightarrow 0, \lbrace y^{t} \rbrace$ hội tụ mạnh đến phần tử $p_{*}$, nghiệm của bài toán \eqref{2.1.1}.
+\end{md}
+
+\begin{md}[xem \cite{BHN}] \label{mde2.3.1}
+Cho $F,\mathcal H,$ và $T$ như trong Mệnh đề \ref{mde2.2.7}. Với bất kỳ dãy bị chặn $\lbrace x^{k} \rbrace$ nào trong $\mathcal H$ sao cho $\lim_{k \rightarrow \infty} \Vert x^{k}-Tx^{k} \Vert =0$, ta có
+\begin{align} \label{2.3.1}
+\limsup_{k \rightarrow \infty} \langle Fp_{*},p_{*}-x^{k} \rangle \leq 0.
+\end{align}
+\end{md}
+
+\noindent \chm \rm \ Lấy một dãy con $\lbrace x^{k_{j}} \rbrace$ của $\lbrace x^{k} \rbrace$ sao cho
+\begin{align*}
+\limsup_{k \rightarrow \infty} \langle Fp_{*},p_{*}-x^{k} \rangle = \lim_{j \rightarrow \infty} \langle Fp_{*},p_{*}-x^{k_{j}} \rangle.
+\end{align*}
+Bởi vì dãy $\lbrace x^{k} \rbrace$ bị chặn nên tồn tại dãy con hội tụ yếu. Giả sử rằng dãy con $\lbrace x^{k_{j}} \rbrace$ của dãy $\lbrace x^{k} \rbrace$ hội tụ yếu tới một điểm $\tilde{x} \in \mathcal H$. Vì $\Vert x^{k} - Tx^{k} \Vert \rightarrow 0$ và $T$ là ánh xạ không giãn, nên theo Bổ đề \ref{bd2.2.6} suy ra $\tilde{x} \in \text{Fix}(T)=C$. Suy ra $\langle Fp_{*},p_{*}-\tilde{x} \rangle \leq 0,$ bởi vì $p_{*}$ là nghiệm duy nhất của \eqref{2.1.1}. Do đó, \eqref{2.3.1} được chứng minh.
+\eproof
+%\end{proof}
+
+Vì toán tử giải $J_{i}$ là ánh xạ (1/2)-trung bình, áp dụng Bổ đề \ref{bd2.2.5} với $T_{i}=J_{i}$, ta có bổ đề sau.
+
+\begin{bd}[xem \cite{BHN}] \label{bd2.3.2}
+Cho $A$ là ánh xạ đơn điệu cực đại trong không gian Hilbert thực $\mathcal H$ sao cho $\mathcal{D}(A)=\mathcal H$ và $C:=ZerA \neq \emptyset.$ Lấy $r_{i},$ với $1 \leq i \leq k,$ là một số thực dương và gọi $J^A_{k}$ là một ánh xạ được định nghĩa bởi $J^A_{k}=J_{1}J_{2}\dots J_{k}$ và $J_{i}=(I+r_{i}A)^{-1}$. Khi đó, $\text{\rm Fix}(J^A_{k})=C$.
+\end{bd}
+
+\begin{bd}[xem \cite{BHN}]\label{bd2.3.3}
+Cho $A$ và $\mathcal H$ như trong Bổ đề \ref{bd2.3.2}. Giả sử rằng có điều kiện {\rm \bf ({C2}$''$)}. Khi đó, $\lim_{k \rightarrow \infty} J_{i}^kx $ tồn tại với mỗi điểm  $x \in \mathcal H$ và $i \geq 1$ trong đó $J_{i}^{k} = J_{i}\dots J_{k}.$
+\end{bd}
+\noindent \chm \rm \ 
+Từ tính chất không giãn của $J_{l}$ với bất kỳ $l \geq 1$ và bất đẳng thức thứ hai trong Bổ đề \ref{bd2.2.4}, suy ra
+\begin{align*}
+\Vert J_{i}^{l+1}x-J_{i}^{l}x \Vert &= \Vert J_{i}J_{i+1}\dots J_{l}J_{l+1}-J_{i}J_{i+1}\dots J_{l}x \Vert \\
+& \geq \Vert J_{l+1}x-x \Vert = r_{l+1} \Vert (J_{l+1}x-x)/r_{l+1} \Vert \leq r_{l+1} \vert Ax \vert,
+\end{align*}
+với bấy kỳ $x \in \mathcal H$ và $1 \leq i <k.$ Áp dụng điều kiện {\bf ({C2}$''$)}, ta được $\lim_{n,m \rightarrow \infty} \sum_{l=n}^{m-1} r_{l+1} =0 $. Vì vậy, với bất kỳ $\varepsilon  > 0,$ tồn tại số nguyên $k_{0} \geq i$ sao cho, với bất kỳ $n,m$ với $m>n>k_{0}$, có
+\begin{align*}
+\sum_{l=n}^{m-1} r_{l+1}<\frac{\varepsilon }{\Vert Ax \Vert}.
+\end{align*}
+Do đó
+\begin{align*}
+\Vert J_{i}^{m}x-J_{i}^{n}x \Vert \leq \sum_{l=n}^{m-1} \Vert J_{i}^{l+1}x-J_{i}^{l}x \Vert \leq \sum_{l=n}^{m-1} r_{l+1} \vert Ax \vert < \varepsilon ,
+\end{align*}
+điều này cho thấy rằng dãy $\{ J_{i}^{k}x \} $ là một dãy Cauchy trong không gian Hilbert thực $\mathcal H$. Do đó, tồn tại $\lim_{k \rightarrow \infty}J_{i}^{k}x $ với mọi $x \in \mathcal H$ và $i \geq 1.$
+\eproof
+
+
+Bây giờ chúng ta có thể định nghĩa các ánh xạ
+\begin{align*}
+J_{i}^{\infty}x:=\lim_{k\rightarrow \infty} J_{i}^{k}x   \quad \text{và} \quad   J^{\infty}x:=\lim_{k \rightarrow \infty}J^{k}x=\lim_{k \rightarrow \infty}J_{1}^{k}x:=J_{1}^{\infty}x.
+\end{align*}
+Vì $J_{i}^{k}$ là không giãn, nên ánh xạ $J_{i}^{\infty}$ là ánh xạ không giãn với mọi $i \geq 1$.
+\begin{bd}[xem \cite{BHN}] \label{bd2.3.4}
+Cho $A,\mathcal H,r_{i}$ và $C$ như trong Bổ đề \ref{bd2.3.3}. Khi đó, $\text{\rm Fix}(J^{\infty})=C.$
+\end{bd}
+
+\noindent \chm \rm \ 
+Rõ ràng, $J_{i}^{k}p=p$ với mọi $i<k$ và $p \in C$, suy ra  $J_{i}^{\infty}p=p$ với mọi $i \geq k$. Đặc biệt, ta có $J_{i}^{\infty}p=J^{\infty}p=p$. Do đó, $C\subset \text{Fix} (J^{\infty}).$ Bây giờ ta sẽ chứng minh rằng $\text{Fix}(J^{\infty}) \subset C.$ Cho $z \in \text{Fix}(J^{\infty})$. Ta sẽ chỉ ra rằng $z \in C$. Thật vậy, lấy một  $p \in C$, ta có
+\begin{align*}
+\Vert J^{k}z - J^{k}p \Vert &= \Vert J_{1}^{k}z - J_{1}^{k}p \Vert \\
+&= \Vert J_{1}J_{2}\dots J_{k}z-J_{1}J_{2}\dots J_{k}p \Vert \\
+& \leq \Vert J_{2}\dots J_{k}z-J_{2} \dots J_{k}p \Vert \leq \dots \\
+& \leq \Vert J_{i}\dots J_{k}z-J_{i} \dots J_{k}p \Vert \leq \dots \\
+& \leq \Vert J_{k}z-J_{k}p \Vert \leq \Vert z-p \Vert ,
+\end{align*}
+cùng với $\Vert J^{\infty}z-p \Vert = \Vert z-p \Vert$ (vì $z \in \text{Fix}(J^{\infty})$) suy ra
+\begin{align*}
+\Vert J_{i}^{\infty}z -p \Vert = \Vert J_{i}^{\infty}z -J_{i}^{\infty}p \Vert = \Vert J_{i+1}^{\infty}z -J_{i+1}^{\infty}p \Vert = \Vert J_{i+1}^{\infty}z -p \Vert = \Vert z-p \Vert.
+\end{align*}
+Áp dụng đẳng thức trên và bất đẳng thức đầu tiên trong Bổ đề \ref{bd2.2.4} với $J_{\lambda},x$ và $y$ được thay thế lần lượt bởi $J_{1},J_{2}^{\infty}z$ và $p$, tương ứng, ta thu được
+\begin{align*}
+\Vert z-p \Vert^{2} &= \Vert J_{1}^{\infty}z -p \Vert^{2} = \Vert J_{1}J_{2}^{\infty}z -p \Vert^{2} \\
+& \leq \Vert J_{2}^{\infty}z -p \Vert^{2} - \Vert J_{1}^{\infty}z - J_{2}^{\infty}z \Vert^{2} \\
+& = \Vert z-p \Vert^{2} - \Vert J_{1}^{\infty}z - J_{2}^{\infty}z \Vert^{2}.
+\end{align*}
+Do đó, $\Vert J_{1}^{\infty}z - J_{2}^{\infty}z \Vert = 0$, và $J_{2}^{\infty}z=J_{1}^{\infty}z=z$. Đẳng thức cuối cùng $z \in \text{Fix}(J^{\infty})$ và $J^{\infty} = J_{1}^{\infty}$. Vậy, ta có $z=J_{1}J_{2}^{\infty}z=J_{1}z$. Nghĩa là $z \in C$. Điều cần chứng minh.
+\eproof
+
+
+Dưới đây là kết quả về sự hội tụ mạnh.
+
+\begin{dl}[xem \cite{BHN}] \label{dl2.3.5}
+Cho $A,\mathcal H,r_{i}$ và $C$ như trong Bổ đề \ref{bd2.3.3} với ánh xạ bị chặn $A^{0}$ và $F$ là một ánh xạ $\eta$-đơn điệu mạnh và $\gamma$-giả co chặt với $\eta + \gamma > 1$. Khi đó, $k \rightarrow \infty$, dãy $\lbrace x^{k} \rbrace$, được xác định bởi
+\begin{align} \label{2.3.2}
+x^{k}=J^{k}(I-t_{k}F)x^{k},
+\end{align}
+$t_{k} \in (0,1]$ và $t_{k} \rightarrow 0$, hội tụ mạnh tới $p_{*}$, nghiệm của bài toán \eqref{2.1.1}.
+\end{dl}
+\noindent \chm \rm \ 
+Ta xét ánh xạ sau $U_{k}=J^{k}(I-t_{k}F)$. Từ tính chất không giãn của $J^{k}$ và Bổ đề \ref{bd2.2.2}, ta suy ra rằng
+\begin{align*}
+\Vert U_{k}x-U_{k}y \Vert &= \Vert J^{k}(I-t_{k}F)x-J^{k}(I-t_{k}F)y \Vert \\
+& \leq \Vert (I-t_{k}F)x-(I-t_{k}F)y \Vert \\
+& \leq (1-t_{k}\tau)\Vert x-y \Vert \quad \forall x,y \in \mathcal H.
+\end{align*}
+Vì vậy, $U_{k}$ là ánh xạ co trong $\mathcal H$. Theo Nguyên lý ánh xạ co Banach, $U_{k}$ có duy nhất điểm bất động, nghĩa là tồn tại một điểm duy nhất $x^{k} \in \mathcal H$ thỏa mãn \eqref{2.3.2}. 
+
+Tiếp theo, ta chỉ ra rằng dãy $\lbrace x^{k} \rbrace$ là bị chặn. Thật vậy, với một điểm cố định $p \in C$, từ Bổ đề \ref{bd2.3.2}, ta có $p=J^{k}p$. Một lần nữa, từ \eqref{2.3.1}, từ tính chất không giãn của ánh xạ $J^{k}$ và Bổ đề \ref{bd2.2.2}, ta có bất đẳng thức sau:
+\begin{align*}
+\Vert x^{k}-p \Vert &= \Vert J^{k}(I-t_{k}F)x^{k} - J^{k}p \Vert \\
+& \leq \Vert (I-t_{k}F)x^{k}-p \Vert \\
+& = \Vert (I-t_{k}F)x^{k}-(I-t_{k}F)p - t_{k}Fp \Vert \\
+& \leq (1-t_{k}\tau)\Vert x^{k}-p\Vert + t_{k} \Vert Fp \Vert .
+\end{align*}
+Do đó, $\Vert x^{k}-p \Vert \leq \Vert F(p) \Vert / \tau$. Nghĩa là dãy $\lbrace x^{k} \rbrace$ bị chặn. Đặt $$y^{k}:=(I-t_{k}F)x^{k}.$$ Vì $\Vert y^{k}-x^{k} \Vert = t_{k}\Vert Fx^{k} \Vert \rightarrow 0$ và $\Vert x^{k}-J^{k}x^{k} \Vert = \Vert J^{k}y^{k}-J^{k}x^{k} \Vert \leq \Vert y^{k}-x^{k}$,
+\begin{align} \label{2.3.3}
+\lim_{k \rightarrow \infty} \Vert x^{k}-J^{k}x^{k} \Vert =0.
+\end{align}
+Bây giờ ta chứng minh rằng 
+\begin{align} \label{2.3.4}
+\lim_{k \rightarrow \infty} \Vert x^{k}-J^{\infty}x^{k} \Vert =0.
+\end{align}
+Tương tụ, như chứng minh trong Bổ đề \ref{bd2.3.3}, ta được
+\begin{align*}
+\Vert J^{k}x-J^{\infty}x \Vert = \lim_{l \rightarrow \infty} \Vert J^{k}x-J^{l}x \Vert \leq \sum_{n=k}^{\infty}r_{n+1}\Vert A^{0}x \Vert.
+\end{align*}
+Ta có thể thấy từ điều kiện đặt lên $r_{k}$ và tính bị chặn của $A^{0}$ rằng nếu $D$ là một tập con khác rỗng và bị chặn của $\mathcal H$, thì với $\varepsilon  > 0$, tồn tại một số nguyên $k_{0}$ sao cho, với mọi $k \geq k_{0}$,
+\begin{align*}
+\sup_{x \in D} \Vert J^{k}x-J^{\infty}x \Vert \leq \varepsilon .
+\end{align*}
+Lấy $D = \lbrace x^{k}:k\geq 1 \rbrace$, ta được
+\begin{align*}
+\lim_{k\rightarrow \infty} \Vert J^{k}x^{k}-J^{\infty}x^{k} \Vert \leq \lim_{k\rightarrow \infty} \sup_{x \in D} \Vert J^{k}x^{k}-J^{\infty}x^{k} \Vert \leq \varepsilon .
+\end{align*}
+
+Nghĩa là $\Vert J^{k}x^{k}-J^{\infty}x^{k} \Vert \rightarrow 0$ khi $k \rightarrow \infty$, kết hợp với \eqref{2.3.3} ta được bất đẳng thức sau,
+\begin{align*}
+\Vert x^{k}-J^{\infty}x^{k} \Vert \leq \Vert x^{k}-J^{k}x^{k} \Vert + \Vert J^{k}x^{k}-J^{\infty}x^{k} \Vert,
+\end{align*}
+suy ra \eqref{2.3.4}. Từ Mệnh đề \ref{mde2.2.7} và \ref{mde2.3.1} với $T$ được thay bởi $J^{\infty}$, ta được \eqref{2.3.1}. Tiếp tục, từ tính chất không giãn của $J^{k}$, Bổ đề \ref{bd2.2.1}, \ref{bd2.2.2} và \ref{bd2.3.4}  ta có
+\begin{align*}
+\Vert x^{k} - p_{*} \Vert^{2} &= \Vert J^{k}(I-t_{k}F)x^{k} - J_{k}p_{*} \Vert^{2} \\
+&\leq  \Vert (I-t_{k}F)x^{k} - p_{*} \Vert^{2} \\
+&=\Vert (I-t_{k}F)x^{k} - (I-t_{k}F)p_{*} - t_{k}Fp_{*} \Vert^{2} \\
+&\leq (1-t_{k}\tau)\Vert x^{k}-p_{*} \Vert^{2} - 2t_{k} \langle Fp_{*},x_{k}-p_{*}-t_{k}Fx^{k} \rangle.
+\end{align*}
+Như vậy
+\begin{align*}
+\Vert x^{k}-p_{*}\Vert^{2} \leq \frac{2}{\tau}[\langle Fp_{*},p_{*}-x^{k} \rangle+ t_{k}\langle Fp_{*},Fx^{k} \rangle].
+\end{align*}
+Sử dụng \eqref{2.3.1}, sự bị chặn của dãy $\lbrace Fx^{k} \rbrace$ và tính chất của $t_{k}$, ta có \\$\Vert x^{k}-p_{*}\Vert \rightarrow 0$ khi $k\rightarrow \infty$.
+\eproof
+
+%\end{proof}
+\begin{md}[xem \cite{BHN}] \label{md2.3.6}
+Cho $A,\mathcal H,r_{i},t_{k}$ và $F$ như trong Định lý \ref{dl2.3.5}. Khi đó, với bất kỳ dãy bị chặn $\lbrace x^{k} \rbrace \subset \mathcal H$, thỏa mãn $\lim_{k \rightarrow \infty} \Vert J^{m}x^{k}-x^{k} \Vert = 0$ với mọi $m\geq 1$, ta có \eqref{2.3.1}.
+\end{md}
+\noindent \chm \rm \ 
+Cho $x^{m}$ là nghiệm của \eqref{2.3.2} với $k$ được thay bằng $m$. Khi đó, từ tính chất không giãn của $J^{m}$ và Bổ đề \ref{bd2.2.1}, ta suy ra
+\begin{align*}
+\Vert x^{m}-x^{k} \Vert^{2} &= \Vert J^{m}(I-t_{m}F)x^{m}-J^{m}x^{k}-x^{k}+J^{m}x^{k} \Vert^{2} \\
+&\leq \Vert (I-t_{m}F)x^{m}-x^{k} \Vert^{2} +2\langle J^{m}x^{k}-x^{k},x^{m}-x^{k} \rangle \\
+&\leq \Vert x^{m}-x^{k} \Vert^{2}- 2t_{m}\langle Fx^{m},x^{m}-x^{k}-t_{m}Fx^{m} \rangle \\
+&\quad + 2\langle J^{m}x^{k}-x^{k},x^{m}-x^{k} \rangle.
+\end{align*}
+Do đó 
+\begin{align*}
+\langle Fx^{m},x^{m}-x^{k}-t_{m}Fx^{m} \rangle \leq \overline{M} \Vert J^{m}x^{k}-x^{k} \Vert /t_{m},
+\end{align*}
+trong đó $\overline{M} \geq \Vert x^{m}-x^{k} \Vert$. Do đó, 
+\begin{align*}
+\limsup_{k \rightarrow \infty}\langle Fx^{m},x^{m}-x^{k}-t_{m}Fx^{m} \rangle \leq 0,
+\end{align*}
+kết hợp với Định lý \ref{dl2.3.5}, tính chất của $F$ và $t_{m}$ ta suy ra \eqref{2.3.1}.
+\eproof 
+%\end{proof}
+
+Bây giờ, ta chứng minh sự hội tụ mạnh của phương pháp \eqref{2.1.8} và từ đó, \eqref{2.1.6} và \eqref{2.1.7} sẽ được chứng minh dưới các ràng buộc {\bf (C1)}, {\bf ({C2}$''$)} và {\bf ({C3}$'$)}.
+
+\begin{dl}[xem \cite{BHN}] \label{dl2.3.7}
+Cho $A,\mathcal H$ và $F$ như trong Định lý \ref{dl2.3.5}. Cho $t_{k},r_{i}$ và $e^{k}$ thỏa mãn điều kiện {\rm  \bf (C1)}, {\rm \bf ({C2}$''$)} và {\rm \bf ({C3}$'$)}. Khi $k\rightarrow \infty$, dãy $\lbrace x^{k} \rbrace$ xác định bởi \eqref{2.1.8}, hội tụ mạnh tới phần tử $p_{*}$ là nghiệm của bài toán bất đẳng thức biến phân \eqref{2.1.1}.
+\end{dl}
+\noindent \chm \rm \ 
+Ta có $J_{i}p=p$ với mọi điểm $p \in ZerA$ bất kỳ, từ \eqref{2.1.8}, tính chất không giãn của $J^{k}$, Bổ đề \ref{bd2.2.2} và điều kiện {\bf ({C3}$'$)}, ta được
+\begin{align*}
+\Vert x^{x+1} - p \Vert &= \Vert J^{k}[(I-t_{k}F)x^{k}+e^{k}]-J^{k}p\Vert \\
+&\leq \Vert (I-t_{k}F)x^{k}-p \Vert + \Vert e^{k} \Vert \\
+&\leq (1-t_{k}\tau)\Vert x^{k}-p\Vert+t_{k}\Vert Fp \Vert + \Vert e^{k} \Vert \\
+&\leq \max \lbrace \Vert x^{1}-p \Vert,(\Vert Fp \Vert + \bar{c})/\tau \rbrace,
+\end{align*}
+với mọi $k\geq 1$, trong đó $\bar{c}$ là hằng số dương sao cho $\Vert e^{k} \Vert/t_{k} \leq \bar{c}$. Do đó, dãy $\lbrace x^{k} \rbrace$ bị chặn. Suy ra các dãy $\{ z_{k-i}^{k} \}$, $\{z^k\}$, trong đó $$z_{k-i}^{k}=J_{k-i}\dots J_{k}z^{k}, \quad z^{k}:=z_{k}^{k}=(I-t_{k}F)x^{k}+e^{k}$$ và $\lbrace Fx^{k} \rbrace$ cũng bị chặn. Giả sử rằng chúng bị chặn bởi một hằng số dương $M_{1}$. Từ  bất đẳng thức đầu tiên trong Bổ đề \ref{bd2.2.4},
+\begin{align*}
+\Vert x^{k+1}-p \Vert^{2} &= \Vert J_{1}z_{2}^{k}-p\Vert^{2} \leq \Vert z_{2}^{k}-p \Vert^{2} - \Vert J_{1}z_{2}^{k}-z_{2}^{k}\Vert^{2} \\
+&= \Vert J_{2}z_{3}^{k}-p\Vert^{2} - \Vert J_{1}z_{2}^{k}-z_{2}^{k}\Vert^{2} \\
+& \leq \Vert z_{3}^{k}-p\Vert^{2} - \Vert J_{1}z_{2}^{k}-z_{2}^{k}\Vert^{2}-\Vert J_{2}z_{3}^{k}-z_{3}^{k}\Vert^{2} \leq ... \\
+& \leq \Vert z^{k}-p\Vert^{2} - \sum_{i=1}^{k-1}\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2} \\
+& = \Vert (I-t_{k}F)x^{k}+e^{k}-p\Vert^{2} - \sum_{i=1}^{k-1}\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2} \\
+& \leq (1-t_{k}\tau)\Vert x^{k}-p\Vert^{2}-2\langle t_{k}Fp-e^{k},(I-t_{k}F)x^{k}+e^{k}-p \rangle \\
+&\quad - \sum_{i=1}^{k-1}\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k} \Vert^{2} \\
+& \leq \Vert x^{k}-p \Vert^{2}+2t_{k}(\Vert Fp\Vert+\Vert e^{k}/ t_{k})\tilde{M}-\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2},
+\end{align*}
+trong đó $\tilde{M}=M_{1}+\Vert p\Vert$. Do đó,
+\begin{align*}
+\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2}-2t_{k}(\Vert Fp\Vert+\bar{c})\tilde{M} \leq \Vert x^{k}-p \Vert^{2}-\Vert x^{k+1} - p \Vert^{2}.
+\end{align*}
+Ta xét hai trường hợp.
+
+\noindent {\it Trường hợp 1} khi $\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2} \leq 2t_{k}(\Vert Fp\Vert+\bar{c})\tilde{M}$ với mọi $k \geq 1$, từ điều kiện {\bf (C1)}, ta được
+\begin{align} \label{2.3.5}
+\lim_{k \rightarrow \infty} \Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k} \Vert^{2}=0.
+\end{align}
+
+\noindent {\it Trường hợp 2} khi $\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2} > 2t_{k}(\Vert Fp\Vert+\bar{c})\tilde{M}$ ta có
+\begin{align*}
+\sum_{k=1}^{M}[\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2}-2t_{k}(\Vert Fp \Vert+\bar{c})\tilde{M}]&\leq \Vert x^{1}-p \Vert^{2}-\Vert x^{M+1}-p \Vert^{2} \\
+&\leq \Vert x^{1}-p \Vert^{2}.
+\end{align*}
+Do đó,
+\begin{align*}
+\sum_{k=1}^{\infty}[\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k}\Vert^{2}-2t_{k}(\Vert Fp \Vert+\bar{c})\tilde{M}]< +\infty.
+\end{align*}
+Như vậy,
+\begin{align*}
+\lim_{k \rightarrow \infty}[\Vert J_{i}z_{i+1}^{k}-z_{i+1}^{k} \Vert^{2}-2t_{k}(\Vert Fp \Vert+\bar{c})\tilde{M}]=0,
+\end{align*}
+kết hợp với điều kiện {\bf (C1)} ta suy ra được \eqref{2.3.5}. Tiếp theo, ta sẽ chứng minh
+\begin{align} \label{2.3.6}
+\lim_{k \rightarrow \infty} \Vert J^{m}x^{k}-x^{k}\Vert=0, 
+\end{align}
+với mọi $m\geq 1$. Lưu ý rằng $\Vert z^{k}-x^{k}\Vert \leq t_{k}(\Vert Fx^{k}\Vert+\Vert e^{k}\Vert/t_{k})\leq t_{k}(M_{1}+\bar{c}),$
+\begin{align} \label{2.3.7}
+\lim_{k \rightarrow \infty}\Vert z^{k}-x^{k} \Vert=0.
+\end{align}
+Bây giờ, ta lấy $i=k-1$ trong \eqref{2.3.5} và kết hợp với \eqref{2.3.7}, ta được
+\begin{align}\label{2.3.8}
+\lim_{k \rightarrow \infty}\Vert J_{k-1}x^{k}-x^{k}\Vert=0.
+\end{align}
+Hơn nữa, lấy $i=k-2$ trong \eqref{2.3.5} và $i=1$ trong định nghĩa của $z_{k-i}^{k}$, tương đương ta được,
+\begin{align}\label{2.3.9}
+\lim_{k \rightarrow \infty} \Vert J_{k-2}z_{k-1}^{k} \Vert =0,
+\end{align}
+và $z_{k-1}^{k}=J_{k-1}z_{k}^{k}$. Vì vậy,
+\begin{align*}
+\Vert z_{k-1}^{k}-J_{k-1}x^{k}\Vert = \Vert J_{k-1}z_{k}^{k}-J_{k-1}x^{k}\Vert \leq \Vert z_{k}^{k}-x^{k}\Vert,
+\end{align*}
+và do đó, từ \eqref{2.3.7} ta có như sau
+\begin{align} \label{2.3.10}
+\lim_{k\rightarrow\infty}\Vert z_{k-1}^{k}-J_{k-1}x^{k}\Vert=0.
+\end{align}
+Như thế, từ \eqref{2.3.8}, \eqref{2.3.9} và \eqref{2.3.10} ta có $\lim_{k\rightarrow\infty}\Vert J_{k-2}J_{k-1}x^{k}-x^{k}\Vert=0$. Lập luận tương tự, ta có \eqref{2.3.6}. Khi đó, dãy $\lbrace x^{k} \rbrace$ thỏa mãn \eqref{2.3.1}.
+
+Bây giờ, ta đánh giá $\Vert x^{k+1}-p_{*}\Vert^{2}$ như sau:
+\begin{align} \label{2.3.11}
+\begin{split}
+\Vert x^{k+1}-p_{*}\Vert^{2}&= \Vert J^{k}[(I-t_{k}F)x^{k}+e^{k}]-J^{k}p_{*}\Vert^{2} \\
+& \leq \Vert (I-t_{k}F)x^{k}+e^{k}-p_{*}\Vert^{2} \\
+& \leq (1-t_{k}\tau)\Vert x^{k}-p_{*}\Vert^{2}\\&\quad+2t_{k}\langle Fp_{*}-e^{k}/t_{k},p_{*}-x^{k}+t_{k}Fx^{k}-e^{k}\rangle \\
+&= (1-t_{k})\Vert x^{k}-p_{*}\Vert^{2}+2t_{k}[\langle Fp_{*},p_{*}-x^{k}\rangle\\&\quad+t_{k}\langle Fp_{*},Fx^{k}-e^{k}/t_{k} \rangle - \langle e^{k}/t_{k},p_{*}-x^{k}+t_{k}Fx^{k}-e^{k} \rangle] \\
+& \leq (1-b_{k})\Vert x^{k}-p_{*}\Vert^{2}+b_{k}c_{k},
+\end{split}
+\end{align}
+trong đó 
+
+$b_{k}=t_{k}\tau$,
+
+$c_{k}=(2/\tau)[\langle Fp_{*},p_{*}-x^{k}\rangle+t_{k}\Vert Fp_{*}\Vert(M_{1}+\bar{c})+(\Vert e^{k} \Vert /t_{k})(M_{1}+\Vert p_{*} \Vert)].$
+
+
+Vì $\sum_{k=1}^{\infty}t_{k}=\infty$, $\sum_{k=1}^{\infty}b_{k}=\infty$. Từ \eqref{2.3.1}, \eqref{2.3.11}, {\bf (C1)}, {\bf ({C3}$''$)} và Bổ đề \ref{bd2.2.3}, ta có $\lim_{k\rightarrow\infty} \Vert x^{k+1}-p_{*}\Vert^{2}=0$.
+\eproof
+%\end{proof}
+
+\begin{nx}\rm \begin{enumerate}
+\item[(a)] Đặt $z^{k}=(I-t_{k}F)x^{k}+e^{k}$ trong \eqref{2.1.8} và đặt lại $t_{k}:=t_{k+1}$ và $e^{k}:=e^{k+1}$, ta có
+\begin{align}\label{2.3.12}
+z^{k+1}=(I-t_{k}F)J^{k}z^{k}+e^{k}.
+\end{align}
+\item[(b)] Nếu $t_{k}\rightarrow 0$, thì $\lbrace x^{k} \rbrace$ hội tụ nếu và chỉ nếu $\lbrace z^{k} \rbrace$ cũng hội tụ và giới hạn của chúng trùng nhau. Thật vậy, ta có $\Vert z^{k}-x^{k}\Vert \leq t_{k}(\Vert Fx^{k}\Vert+\Vert e^{k}\Vert/t_{k})$, từ định nghĩa của $z^{k}$. Vì thế, khi dãy $\lbrace x^{k} \rbrace$ hội tụ, và $\lbrace x^{k} \rbrace$ bị chặn và từ đó suy ra $\lbrace Fx^{k} \rbrace$ cũng bị chặn. Vì vậy $t_{k},\Vert e^{k}\Vert/t_{k}\rightarrow 0$ khi $k\rightarrow \infty$, từ bất đẳng thức cuối cùng và sự hội tụ của $\lbrace x^{k} \rbrace$ ta suy ra sự hội tụ của $\lbrace z^{k} \rbrace$ và chúng có giới hạn trùng nhau. 
+\item[(c)] Lấy $F=I-f$ với $f=aI+(1-a)u$ với một số không đổi $a\in(0,1)$ và một điểm bất động $u\in \mathcal H$. Rõ ràng, $F$ là $\eta$-đơn điệu mạnh và $\gamma$-giả co chặt sao cho $\eta+\gamma>1$. Khi đó, từ \eqref{2.1.8} và \eqref{2.3.12} với $t_{k}=(1-a)t_{k}$, ta được hai phương pháp là \eqref{2.1.6} và \eqref{2.1.7}.
+	\end{enumerate}
+\end{nx}
+
+\section{Ví dụ minh họa}
+
+Trong mục này, chúng tôi đề xuất hai ví dụ minh họa cho sự hội tụ mạnh của phương pháp lặp \eqref{2.1.8} giải bất đẳng thức biến phân \eqref{2.1.1} trên tập không điểm của toán tử đơn điệu cực đại. Ví dụ được đưa ra để áp dụng giải bài toán cực tiểu có ràng buộc. Chương trình thực nghiệm được viết bằng ngôn ngữ MATLAB 7.0 và đã chạy thử nghiệm trên máy tính Dell Vostro 15 3568, CORE i5, RAM 8GB.
+
+Xét bài toán tìm phần tử $x_{*} \in C$ sao cho
+\begin{equation}\label{vds}
+\varphi (x^*)=\min_{x \in C} \varphi(x), \quad C \neq  0,
+\end{equation}
+ở đây $\varphi (x)$, $x \in \mathcal H$ là một hàm lồi với $\triangledown \varphi$ là toán tử đơn điệu và liên tục Lipschitz trên $\mathcal H$ và $C$ là một tập con lồi đóng của $\mathcal H$, trong hai trường hợp sau đây.
+
+\begin{vd}\label{vd1}\rm Giải bài toán \eqref{vds} trong trường hợp $\varphi (x) = \Vert x-1 \Vert^{2}$ với $ x \in \mathbb R^2$, không gian Euclid, $C$ là tập không điểm của toán tử đơn điệu cực đại $A$, ở đây $A:\mathbb R^{2} \rightarrow \mathbb R^{2}$ xác định bởi
+\begin{align*}
+A(x)= \begin{pmatrix}
+2 & 2\\ 
+2 & 2
+\end{pmatrix}
+\begin{pmatrix}
+x_{1}\\x_{2} 
+\end{pmatrix}, \quad x=(x_{1},x_{2})^{\top} \in \mathbb R^{2}.
+\end{align*}
+ Tập không điểm của $A$ là
+\begin{align}\label{vds1}
+C= Zer(A) = \lbrace x=(x_{1},x_{2})^{\top} \in \mathbb R^{2}:x_{2} = -x_{1} \rbrace.
+\end{align}
+Toán tử giải của $A$ là 
+\begin{align*}
+J_{r}^{A}=(I+rA)^{-1}=\begin{pmatrix}
+\frac{1+2r}{4r+1} & \frac{-2r}{4r+1}\\ 
+\frac{-2r}{4r+1} & \frac{1+2r}{4r+1}
+\end{pmatrix}
+\end{align*}
+là một ánh xạ không giãn. Như đã biết, tập không điểm của $A$ là tập điểm bất động của toán tử giải $J_{r}^{A}$. Khi đó nghiệm duy nhất của bất đẳng thức biến phân
+\begin{align}\label{vds2}
+\langle Fu_{*},x-u_{*} \rangle \geq 0 \quad \forall x \in C
+\end{align}
+là $u_{*}=(0,0)$, ở đây $F=\triangledown \varphi (x)= 2(x-\textbf{1}), x=(x_{1},x_{2})^{\top} \in \mathbb R^{2}$ là 2-liên tục Lipschitz và 2-đơn điệu mạnh trên $\mathbb R^{2}$.
+
+Bài toán \eqref{vds} tương đương với bài toán \eqref{vds2}. Ta sử dụng dãy lặp \eqref{2.1.8} giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại \eqref{vds1}--\eqref{vds2}. 
+
+Chọn $t_k = 1/(k+2)$, kết quả tính toán với các xấp xỉ ban đầu  và véc-tơ sai số  được chọn khác nhau cho trong các bảng dưới đây với sai số $\varepsilon=\Vert x^k-u^*\Vert $.
+\\
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}			
+\hline 
+$k$ & $x_1^k$ & $x_2^k$ & $\Vert x^ {k}- u^{*} \Vert$\\ 
+\hline 
+5 & 0.0139 & 0.0139 & 0.0196 \\ 
+\hline 
+10 & 0.0014 & 0.0014 & 0.0020 \\ 
+\hline 
+20 & 0.0000 & 0.0000 & 1.12914e-04 \\ 
+\hline 
+50 & 0.0000 & 0.0000 & 2.2215e-06\\
+\hline
+\end{tabular}
+\caption{Kết quả tính toán dãy lặp \eqref{2.1.8} cho Ví dụ \ref{vd1} với $x^0= (5, 5)^\top $, $e^{k}=(0,0)^\top$}
+\label{B21}
+	\end{table}
+
+%\end{center}
+ 
+%Tiếp theo, ta sẽ tính toán ví dụ với xấp xỉ ban đầu là $x_{0}= (-15, -20)^{T}$ và $t = 1/(k+2)$.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}			
+\hline 
+$k$ & $x_1^k$ & $x_2^k$ & $\Vert x^ {k}- u^{*} \Vert$\\ 
+\hline 
+5 & 0.0187 & 0.0187 & 0.0264 \\ 
+\hline 
+10 & 0.0022 & 0.0022 & 0.0031 \\ 
+\hline 
+20 & 0.0002 & 0.0002 & 2.7119e-04 \\ 
+\hline 
+50 & 0.0000 & 0.0000 & 7.9973e-06\\
+\hline
+\end{tabular}
+\caption{Kết quả tính toán dãy lặp \eqref{2.1.8} cho Ví dụ \ref{vd1} với $x^0= (5, 5)^\top$, $e^{k}=(0.1, 0.1)^\top$}
+\label{B22}
+	\end{table}
+
+%\end{center}
+\newpage
+
+	\begin{table}[ht!]
+	\centering
+			\begin{tabular}{|c|c|c|c|}
+\hline 
+$k$ & $x_1^k$ & $x_2^k$ & $\Vert x^ {k}- u^{*} \Vert$\\ 
+\hline 
+5 & 0.0139 & 0.0139 & 0.0196 \\ 
+\hline 
+10 & 0.0014 & 0.0014 & 0.0020 \\ 
+\hline 
+20 & 0.0000 & 0.0000 & 1.12914e-04 \\ 
+\hline 
+50 & 0.0000 & 0.0000 & 2.2215e-06\\
+\hline
+\end{tabular}
+	 \caption{Kết quả tính toán dãy lặp \eqref{2.1.8} cho Ví dụ \ref{vd1} với $x^0= (5, 5)^\top $,  $e^{k}=(10^{-k},10^{-k})^\top $}
+\label{B23}
+\end{table}
+
+
+	\begin{table}[ht!]
+	\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+$k$ & $x_1^k$ & $x_2^k$ & $\Vert x^ {k}- u^{*} \Vert$\\ 
+\hline 
+5 & 0.1329 & -0.1052 & 0.1695 \\ 
+\hline 
+10 & 0.0393 & -0.0365 & 0.0536  \\ 
+\hline 
+20 & 0.0109 & -0.0107 & 0.0153 \\ 
+\hline 
+50 & 0.0019 & -0.0019 & 0.0027\\ 
+\hline 
+100 & 0.0005 & -0.0005 & 6.8638e-04\\ 
+\hline 
+\end{tabular}
+\caption{Kết quả tính toán dãy lặp \eqref{2.1.8} cho Ví dụ \ref{vd1} với $x^{0}= (-15, -20)^{\top} $,  $e^{k}=(0,0)^\top$}
+\label{B24}
+\end{table}
+
+Bây giờ thay đổi dãy tham số  $t_k = 1/(k+4)$, ta nhận được kết quả trong Bảng \ref{B25}.
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		$k$ & $x_1^k$ & $x_2^k$ & $\Vert x^ {k}- u^{*} \Vert$\\ 
+		\hline 
+		5 & 0.4274 & -0.4060 & 0.5895 \\ 
+		\hline 
+		10 & 0.1660 & -0.1636 & 0.2231 \\ 
+		\hline 
+		20 & 0.0544 & -0.0543 & 0.0769\\ 
+		\hline 
+		50 & 0.0105 & -0.0105 & 0.0148 \\ 
+		\hline 
+		100 & 0.0028 & -0.0028 & 0.0040\\ 
+		\hline 
+		500 & 0.0001 & -0.0001 & 1.6735e-04\\ 
+		\hline 
+	\end{tabular}
+	\caption{Kết quả tính toán dãy lặp \eqref{2.1.8} cho Ví dụ \ref{vd1} với $x^{0}= (-15, -20)^{\top} $, $e^{k}=(0,0)^\top$}
+	\label{B25}
+\end{table}
+
+
+\begin{nx}\rm \begin{enumerate}
+		\item Từ Bảng \ref{B21} ta nhận thấy sau 50 lần lặp, nghiệm xấp xỉ $x^{(50)}=(x^{(50)}_1,x^{(50)}_2)^\top $ là một xấp xỉ khá tốt cho nghiệm đúng $u^{*}=(0,0)^\top\in \mathbb R^2$ của bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại \eqref{vds1}--\eqref{vds2} với sai số giữa nghiệm xấp xỉ và nghiệm đúng $\varepsilon = 2.2215 \times 10^{-06}$.
+		\item Từ Bảng \ref{B21}--\ref{B25}  cho thấy việc thay đổi xấp xỉ ban đầu, dãy tham số lặp và véc-tơ sai số có ảnh hưởng đến số lần lặp để đạt được nghiệm xấp xỉ với sai số cho trước.
+	\end{enumerate}
+\end{nx} 
+
+
+
+%Tiếp theo, ta tính toán ví dụ với $x_{0}= (-15, -20)^{T}$ và số $t = 1/(k+4)$.
+
+
+
+\end{vd}
+\begin{vd}\label{vd2}\rm Giải bài toán \eqref{vds} trong trường hợp $
+	 \varphi(u)= u^\top Bu+b^\top u+c$ với
+	 $$ 
+	  B=\begin{pmatrix}
+	 3 &0 &0 &0 &0\\ 
+	 0 &3 &0 &0 &0\\ 
+	 0 &0 &3 &0 &0\\ 
+	 0 &0 &0 &3 &0\\ 
+	 0 &0 &0 &0 &3\\ 
+	 \end{pmatrix},\quad
+	 b=\begin{pmatrix}
+	 -6\\ 2\\ 0\\ 1\\ 5
+	 \end{pmatrix}, \quad c=5
+	 $$
+	 và $C$ là tập không điểm của toán tử đơn điệu cực đại
+	 $A:\mathbb{R}^5 \to \mathbb{R}^5$ định nghĩa bởi
+	 $$A(x)= 
+	 \begin{pmatrix} 
+	 0 &0 &0 &0 &0\\
+	 0 &$1$ &$1$ &0 &0\\
+	 0 &$-1$ &$1$ &0 &0\\
+	 0 &0 &0 &$1$ &$1$\\
+	 0 &0 &0 &0 &$1$
+	 \end{pmatrix} 
+	 \begin{pmatrix} 
+	 x_1\\ x_2\\ x_3\\ x_4\\ x_5
+	 \end{pmatrix} , \quad x=(x_1,x_2,x_3,x_4,x_5)^\top \in \mathbb R^5.
+	 $$
+Tập không điểm của toán tử đơn điệu cực đại $A$ là
+\begin{align}\label{vds3}
+C& ={\text Zer}(A)=\{u=(u_1,u_2,u_3,u_4,u_5)^\top \in \mathbb R^5: \notag \\
+& \qquad u_1=\alpha, u_2=u_3=u_4=u_5=0\}.
+\end{align}
+Toán tử giải của $A$ là 
+\begin{align*}
+J_{r}^{A}=(I+rA)^{-1}.
+\end{align*}
+Khi đó, nghiệm duy nhất của bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại \eqref{vds2}--\eqref{vds3} hay bài toán cực trị \eqref{vds} với ràng buộc \eqref{vds3}
+là $u_{*}=(1,0,0,0,0)^\top \in \mathbb R^5$, ở đây $$F= \bigtriangledown \varphi (x) = 
+\begin{pmatrix}
+6x_1-6\\
+6x_2+2\\
+6x_3\\
+6x_4+1\\
+6x_5+5
+\end{pmatrix}
+$$ với $(x_1,x_2,x_3,x_4,x_5)^\top \in \mathbb R^5$ là 6-liên tục Lipschitz và 6-đơn điệu mạnh trên $\mathbb R^{5}$.
+
+Bây giờ áp dụng phương pháp lặp \eqref{2.1.8} ta nhận được kết quả tính toán cho trong bảng dưới đây.
+
+\begin{table}[ht!]
+	\centering			
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$k$ & $x_1^k$ & $x_2^k$ & $x_3^k$ & $x_4^k$ & $x_5^k$ & $\Vert x^ {k}- u^{*} \Vert$ \\ 
+\hline 
+5 & 1.0000 & -0.0631 & -0.0823 & 0.2110 & -0.2870 & 0.3710 \\ 
+\hline 
+10 & 1.0000 & -0.0041 & -0.0356 & 0.1497 & -0.1113 & 0.1900 \\ 
+\hline 
+20 & 1.0000 & 0.0040 & -0.0094 & 0.0635 & -0.0331 & 0.0723 \\
+\hline 
+50 & 1.0000 & 0.0017 & -0.0007 & 0.0153 & -0.0057 & 0.0165 \\
+\hline
+100 & 1.0000 & 0.0005 & 0.0001 & 0.0048 & -0.0015 & 0.0051 \\
+\hline
+200 & 1.0000 & 0.0001 & 0.0001 & 0.0015 & -0.0004 & 0.0015 \\
+\hline
+500 & 1.0000 & -0.0000 & 0.0000 & 0.0003 & -0.0001 & 2.9344e-04 \\
+\hline
+\end{tabular}
+\caption{Kết quả tính toán dãy lặp \eqref{2.1.8} cho Ví dụ \ref{vd2} với $x^0= (4,5,2,-6,4)^\top \in \mathbb R^5 $,  $t_k = 1/(k+2)$, $e^{k}=(0,0,0,0,0)^\top \in \mathbb R^5$}
+\label{B26}
+\end{table}
+
+
+
+%\begin{table}[ht!]
+%	\centering		
+%\begin{tabular}{|c|c|c|c|c|c|c|c|}
+%\hline 
+%$k$ & $x_1^k$ & $x_2^k$ & $x_3^k$ & $x_4^k$ & $x_5^k$ & $\Vert x^ {k}- u^{*} \Vert$ \\ 
+%\hline 
+%5 & 1.0000 & -0.0631 & -0.0823 & 0.2110 & -0.2870 & 0.3710 \\ 
+%\hline 
+%10 & 1.0000 & -0.0041 & -0.0356 & 0.1497 & -0.1113 & 0.1900 \\ 
+%\hline 
+%20 & 1.0000 & 0.0040 & -0.0094 & 0.0635 & -0.0331 & 0.0723 \\
+%\hline 
+%50 & 1.0000 & 0.0017 & -0.0007 & 0.0153 & -0.0057 & 0.0165 \\
+%\hline
+%100 & 1.0000 & 0.0005 & 0.0001 & 0.0048 & -0.0015 & 0.0051 \\
+%\hline
+%200 & 1.0000 & 0.0001 & 0.0001 & 0.0015 & -0.0004 & 0.0015 \\
+%\hline
+%500 & 1.0000 & -0.0000 & 0.0000 & 0.0003 & -0.0001 & 2.9344e-04 \\
+%\hline
+%\end{tabular}
+%\caption{Kết quả tính toán với $x^0= (4,5,2,-6,4)^\top \in \mathbb{R}^2$,  $t_k = 1/(k+2)$, $e^{k}=10^{-k}(1,1,1,1,1)^\top $}
+%\label{B26}
+%\end{table}
+%Nhận thấy rằng sau 500 lần lặp, nghiệm xấp xỉ $x^{(500)}$ là một xấp xỉ khá tốt cho nghiệm đúng $u^{*}=(1,0,0,0,0)$ của bài toán bất đẳng thức biến phân với sai số $\varepsilon =\Vert x^k-x^*\Vert = 2.9344 \times 10^{-04}$. 
+%
+%\begin{center}
+%			{Bảng 2.2.3}: Kết quả tính toán với $x^0= (4,5,2,-6,4)^T\in \mathbb{R}^2$,  $t_k = 1/(k+4)$, $e^{k}=(0,0,0,0,0)^T$\\ \medbreak
+%			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+%\hline 
+%$k$ & $x_1^k$ & $x_2^k$ & $x_3^k$ & $x_4^k$ & $x_5^k$ & $\Vert x^ {k}- u^{*} \Vert$ \\ 
+%\hline 
+%5 & 1.0000 & -0.0476 & -0.0716 & 0.2020 & -0.2471 & 0.3305 \\ 
+%\hline 
+%10 & 1.0000 & -0.0030 & -0.0306 & 0.1344 & -0.0975 & 0.1688 \\ 
+%\hline 
+%20 & 1.0000 & 0.0037 & -0.0086 & 0.0586 & -0.0304 & 0.0667 \\
+%\hline 
+%50 & 1.0000 & 0.0016 & -0.0007 & 0.0148 & -0.0055 & 0.0159 \\
+%\hline
+%100 & 1.0000 & 0.0005 & 0.0001 & 0.0047 & -0.0014 & 0.0050 \\
+%\hline
+%200 & 1.0000 & 0.0001 & 0.0001 & 0.0014 & -0.0004 & 0.0015 \\
+%\hline
+%500 & 1.0000 & -0.0000 & 0.0000 & 0.0003 & -0.0001 & 2.9227e-04 \\
+%\hline
+%\end{tabular}\\ \quad\\
+%\end{center}
+%Nhận thấy rằng sau 500 lần lặp, nghiệm xấp xỉ $x^{(500)}$ là một xấp xỉ khá tốt cho nghiệm đúng $u^{*}=(1,0,0,0,0)$ của bài toán bất đẳng thức biến phân với sai số $\varepsilon =\Vert x^k-x^*\Vert = 2.9227 \times 10^{-04}$. 
+\end{vd}
+
+\begin{nx} \rm Nhận thấy rằng sau 500 lần lặp, nghiệm xấp xỉ $x^{(500)}$ là một xấp xỉ khá tốt cho nghiệm đúng $u^{*}=(1,0,0,0,0)^\top \in \mathbb R^5$ của bài toán \eqref{vds2}--\eqref{vds3} với sai số $\varepsilon =\Vert x^k-u^*\Vert = 2.9344 \times 10^{-04}$. 
+\end{nx}
+
+\chapter{Kết luận}                         % Chương 3
+%\addcontentsline{toc}{chapter}{{\bf  Kết luận}\rm}
+\section{Kết luận}
+
+\subsection*{Đồ án đã đạt được mục tiêu đề ra} 
+
+"Nghiên cứu một phương pháp lặp giải một lớp bài toán bất đẳng thức biến phân hai cấp trong không gian Hilbert thực; đưa ra  và tính toán ví dụ minh họa".
+
+\subsection*{Kết quả của đồ án} 
+
+Đồ án đã trình bày một phương pháp lặp giải một lớp bất đẳng thức biến phân hai cấp, cụ thể là bài toán bất đẳng thức biến phân đơn điệu với tập ràng buộc là tập không điểm của toán tử đơn điệu cực đại cùng hai ví dụ áp dụng giải bài toán cực trị. Cụ thể:
+\begin{enumerate}
+	\item Trình bày khái niệm và tính chất của không gian Hilbert thực $\mathcal H$; khái niệm, ví dụ về toán tử đơn điệu cực đại, tập không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực $\mathcal H$.
+	\item Giới thiệu về bài toán bất đẳng thức biến phân đơn điệu trên tập không điểm của toán tử đơn điệu cực đại trong không gian Hilbert thực.
+	\item Trình bày phương pháp lặp giải bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại, chứng minh sự hội tụ mạnh của phương pháp và đưa ra hai ví dụ số áp dụng giải bài toán cực trị và minh họa cho sự hội tụ của phương pháp.  Chương trình thực nghiệm được viết bằng ngôn ngữ MATLAB.
+\end{enumerate}
+
+\subsection*{Kỹ năng đạt được}
+
+\begin{enumerate}
+	\item  Biết tìm kiếm, đọc, dịch tài liệu chuyên ngành liên quan đến nội dung đồ án.
+	\item Biết tổng hợp các kiến thức đã học và kiến thức trong tài liệu tham khảo để viết báo cáo đồ án.
+	\item Chế bản đồ án bằng latex, viết chương trình tính toán cho ví dụ minh họa bằng sử dụng ngôn ngữ MATLAB.
+	\item Biết tóm tắt nội dung đồ án và biết trình bày một báo cáo khoa học. 
+\end{enumerate}
+
+
+\section{Hướng phát triển của đồ án trong tương lai}
+
+\begin{enumerate}
+	\item Nghiên cứu một số bài toán thực tế được mô tả dưới dạng bài toán bất đẳng thức biến phân hai cấp.
+	\item Nghiên cứu cải tiến phương pháp lặp hiện giải bài toán bất đẳng thức biến phân trên tập không điểm của toán tử đơn điệu cực đại và một số bài toán liên quan.
+\end{enumerate}
+
+
+                     
+
+\begin{thebibliography}{99}\rm
+	\addcontentsline{toc}{chapter}{\bf Tài liệu tham khảo}
+	
+	\subsection*{Tiếng Việt}
+	
+	\bibitem{TT} Trần Vũ Thiệu, Nguyễn Thị Thu Thủy (2011), {\it Giáo trình Tối ưu phi tuyến}, NXB Đại học Quốc gia Hà Nội. 
+	
+	\bibitem{Tuy} Hoàng Tụy (2003), {\it Hàm thực và Giải tích hàm}, NXB Đại học Quốc gia Hà Nội.
+	
+	\subsection*{Tiếng Anh}
+	
+	\bibitem{AS} R.P. Agarwal, D. O’Regan, D.R. Sahu (2009), {\it Fixed Point Theory for Lipschitzian-type Mappings with Applications}, Springer.
+	
+	\bibitem{Bai} C. Baiocchi, A. Capelo (1984), {\it Variational and Quasivariational Inequalities: Applications to Free Boundary Problems}, J. Wiley and Sons, New York.
+	
+	\bibitem{BHN} N. Buong, P.T.T. Hoai, N.D. Nguyen (2017), "Iterative methods for a class of variational inequalities in Hilbert spaces", {\it J. Fixed Point Theory Appl.}, 19, pp. 2383--2395.
+	\bibitem{Daf} S. Dafermos (1980), {"Traffic equilibrium and variational inequalities"}, {\it Transportation Science}, 14,  pp. 42--54.
+	
+	\bibitem{Kin} D. Kinderlehrer, G. Stampacchia  (1980), {\it An Introduction to Variational Inequalities and Their Applications}, Acad. Press, New York.
+	
+	\bibitem{Kon} I.V. Konnov (2001), {\it Combined Relaxation Methods for Variational Inequalities}, Springer Verlag, Berlin, Germany.
+	
+	\bibitem{Nag} A. Nagurney  (1993), {\it Network Economics: A Variational Inequality Approach Advances in Computational Economics}, Kluwer Academic Publishers, Springer Netherlands.
+	
+	\bibitem{Noor} M.A. Noor (1991), "An iterative algorithm for variational inequalities", {\it J. Mathematics Anal. Appl.}, 158, pp. 448--455.
+
+	
+	 \bibitem{Smith} M.J. Smith (1979), {"Existence, uniqueness, and stability of traffic equilibria"}, {\it Transportation Research}, 13B, pp. 295--304.
+	 
+	 \bibitem{Stam} G. Stampacchia (1964), {"Formes bilineares coercitives sur les ensembles convexes"}, {\it C. R. Acad. Sci. Paris}, 258, pp. 4413--4416.
+	
+
+\end{thebibliography}
+
+\chapter*{Phụ lục tính toán}
+\addcontentsline{toc}{chapter}{\bf Phụ lục tính toán}
+\textbf{Code Ví dụ 2.3.1}
+	\begin{lstlisting}
+A = [2 2;2 2];
+I = eye(2);
+N=input('Nhap N');
+xn=[5 5];
+z=[0 0];
+for i=1:N
+    J1=[1 0; 0 1]; 
+    x=xn;
+    for k=1:i
+        r = 1/(k+2);
+        J=[(1+2*r)/(4*r+1) -2*r/(4*r+1); -2*r/(4*r+1) (1+2*r)/(4*r+1)];
+        J1=J1*J;
+    end;
+     t = 1/(i+2);
+     F= 2*(x-1);
+     xn= (J1*(x-(t*F))')';
+     err = norm(xn-z);
+end;
+'giai thuc'
+    J1
+'Nghiem xap xi la'
+    xn
+'Sai so'
+    err
+\end{lstlisting}
+\newpage
+\textbf{Code Ví dụ 2.3.3}
+	\begin{lstlisting}
+N=input('Nhap N');
+xn=[4 5 2 -6 4];
+z=[1 0 0 0 0];
+for i=1:N
+    J1=eye(5); 
+    x=xn;
+    A=[0 0 0 0 0;0 1 1 0 0;0 -1 1 0 0 ;0 0 0 1 1;0 0 0 0 1];
+    I= eye(5);
+    for k=1:i
+        r = 1/(k+2);
+        J= inv(I+r*A);
+        J1=J1*J;
+    end;
+     t = 1/(i+6);
+     mu= [1/10^(i) 1/10^(i) 1/10^(i) 1/10^(i) 1/10^(i)];    
+     F = [6*x(1)-6 6*x(2)+2 6*x(3) 6*x(4)+1 6*x(5)+5];
+     xn= (J1*((x-(t*F)+mu))')';
+     err = norm(xn-z);
+end;
+'giai thuc'
+ J1
+'Nghiem xap xi la'
+ xn
+ err
+\end{lstlisting}
+\end{document}
